@@ -7,7 +7,7 @@ public class FFNeuralNetwork
     //should have a list of layers
     //Each layer is a list of node objects
     ArrayList<NNNode>[] layers;
-    public enum ConnectionStrategy {DIRECTLY_CONNECTED, INDIRECTLY_CONNECTED}
+    public enum ConnectionStrategy {FULLY_CONNECTED, INDIRECTLY_CONNECTED}
     Config config;
     public FFNeuralNetwork(int[] layerSizes, ConnectionStrategy strategy, Config config)
     {
@@ -94,7 +94,56 @@ public class FFNeuralNetwork
         return r.nextFloat();
     }
 
+    // Generate the output of the NN
+    public float[] feed(float[] inputs)
+    {
+        if (inputs.length != layers[0].size())
+        {
+            System.out.println("The given inputs do not match the size of the input layer!");
+            return null;
+            //This should probably be replaced with "throw MyCustomException" and some kind of better error handling
+            //Maybe surround the uses of user implementations (from the NeatTrainer interface) in try catch
+        }
 
+        for(int i = 0; i < layers[0].size(); i++)
+        {
+            layers[0].get(i).input = inputs[i];
+        }
+
+        float[] output = new float[layers[layers.length-1].size()];
+        //Propagate activation energy forward
+        for (int i = 0; i < layers.length-1; i++)
+        {
+            for (NNNode n1 : layers[i])
+            {
+                float activation = n1.activation();
+                for (Object n2 : n1.connections.keySet())
+                {
+                    //TODO: Make this a binary search for efficiency later!
+                    int index = layers[i+1].indexOf(n2);
+                    layers[i+1].get(index).input += activation;
+                }
+            }
+        }
+
+        //This part is inefficient but not significant
+        //Save the output layer
+        Object[] outputObjects = layers[layers.length-1].toArray();
+        for (int i = 0; i < outputObjects.length; i++)
+        {
+            output[i] = (float)outputObjects[i];
+        }
+
+        //Reset the incoming energy to each node (start at one because don't need to reset input layer)
+        for (int i = 1; i < layers.length; i++)
+        {
+            for (NNNode n : layers[i])
+            {
+                n.input = 0;
+            }
+        }
+        return output;
+    }
 
     public String toString()
     {

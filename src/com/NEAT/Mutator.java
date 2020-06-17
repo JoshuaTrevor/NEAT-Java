@@ -3,14 +3,8 @@ package com.NEAT;
 import java.util.ArrayList;
 import java.util.Random;
 
-//initialise with various config data, then use mutate(nn) which returns a new NN
 public class Mutator
 {
-    public Mutator()
-    {
-
-    }
-
     public void mutate(FFNeuralNetwork originalNN)
     {
         FFNeuralNetwork nn = originalNN;
