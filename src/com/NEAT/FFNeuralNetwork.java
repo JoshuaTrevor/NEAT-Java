@@ -1,4 +1,4 @@
-package com.company;
+package com.NEAT;
 
 import java.util.*;
 
@@ -6,11 +6,12 @@ public class FFNeuralNetwork
 {
     //should have a list of layers
     //Each layer is a list of node objects
-    //List<List<NNNode>> layers;
     ArrayList<NNNode>[] layers;
     public enum ConnectionStrategy {DIRECTLY_CONNECTED, INDIRECTLY_CONNECTED}
-    public FFNeuralNetwork(int[] layerSizes)
+    Config config;
+    public FFNeuralNetwork(int[] layerSizes, ConnectionStrategy strategy, Config config)
     {
+        this.config = config;
         layers = new ArrayList[layerSizes.length];
 
         int layerID = 0;
@@ -23,15 +24,16 @@ public class FFNeuralNetwork
             }
             layerID++;
         }
-        addConnections(ConnectionStrategy.INDIRECTLY_CONNECTED, 0.8F);
+        initConnections(strategy);
     }
 
-    public void addConnections(ConnectionStrategy strategy)
+    // Default to 70%
+    public void initConnections(ConnectionStrategy strategy)
     {
-        addConnections(strategy, 0F);
+        initConnections(strategy, 0.7F);
     }
 
-    public void addConnections(ConnectionStrategy strategy, float par1)
+    public void initConnections(ConnectionStrategy strategy, float par1)
     {
         for(int i = 0; i < layers.length; i++)
         {
@@ -47,7 +49,7 @@ public class FFNeuralNetwork
 
     //Should make concurrent at some point
     //Remember: if the size of one of the other layers changes I won't know concurrently
-    //This initialising doens't fchange the size of any of the layers, but later that might mess up ors omething idk
+    //This initialising doesn't change the size of any of the layers, but later that might mess up ors omething idk
     public void initConnectForward(int layerID, float connectivity)
     {
         //Using connectivity determine how many nodes to connect to
@@ -101,7 +103,7 @@ public class FFNeuralNetwork
         {
             for (int j = 0; j < layers[i].size(); j++)
             {
-                output += layers[i].get(j) + "\n";
+                output += (layers[i].get(j).toString());
             }
             output += "-----------------\n";
         }
