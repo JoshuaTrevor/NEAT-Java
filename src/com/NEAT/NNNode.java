@@ -20,8 +20,12 @@ public class NNNode
     }
 
     //Use sigmoid activation function
+    //There should be a max value implemented that's related to the sigmoid function
+    //Maybe the sigmoid function should use it for upper/lower bound? Just to make sure it doesn't get ludicrous with incrementing
     float activation()
     {
+        System.out.println("input: " + input);
+        System.out.println("output " + (float) (1/( 1 + Math.pow(Math.E, (-1 * input)))));
         return (float) (1/( 1 + Math.pow(Math.E, (-1 * input))));
     }
 

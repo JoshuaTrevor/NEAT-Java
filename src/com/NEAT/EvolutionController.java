@@ -5,7 +5,11 @@ package com.NEAT;
 // Basically, every other class should only deal with 1 NN at most, this is the only class that deals with many NN.
 
 
-import com.NEAT.Hierarchy.Population;
+import com.NEAT.Workers.Pruner;
+import com.NEAT.Workers.SpeciesEvaluator;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 public class EvolutionController
 {
@@ -14,23 +18,57 @@ public class EvolutionController
     {
         return null;
     }
-
-    //While small improvements in efficiency in other classes are important, computing and storing results needs to be memory optimised
-//very well to avoid ram blowouts like in neat-python
-    public void evolveGeneration(Population p)
+    public Queue<Species> unevaluatedSpecies = new LinkedList<>();
+    public ConcurrentSkipListSet<Species> evaluatedSpecies = new ConcurrentSkipListSet<>();
+    public void train(Config config, NeatTrainer implementation)
     {
-        //So the memory optimisation issue is:
-        // To choose which species to keep and breed, need to compare their fitnesses
-        // That means keeping one neural network for each member of the population which is huge
-        // To fix this we should proactively discard species as soon as it's possible to know they won't be selected for next generation
+        //Create the worker threads
 
-        //My general structure idea is to put everything into a queue and have it accessed by X worker threads
-        // These worker threads will each select NN's 1 by 1, then evolve them and return the results to this class in another data struct
-        // This data struct is the thing which will have to be pruned in real time by yet another thread
-        // Use wait() when the dat struct is pruned effectively and use notify() from the worker threads once its size gets too alrge
-        // Eg if size is > X, worker thread will check size when placing new entries and then notify pruning thread to do work
-        //Use this stuff https://stackoverflow.com/questions/5999100/is-there-a-block-until-condition-becomes-true-function-in-java/26218153
+        //Create evaluators which compute the fitness of species from the queue
+        ArrayList<SpeciesEvaluator> evaluators = new ArrayList<>();
+        for(int i = 0; i < config.workers; i++)
+        {
+            evaluators.add(new SpeciesEvaluator(implementation, this));
+        }
 
+        //Create a "pruner" who removes undesirable species
+        Pruner pruner = new Pruner(this, config);
+
+
+        for(SpeciesEvaluator evaluator : evaluators)
+            evaluator.start();
+        pruner.start();
+
+        initPopulation(config);
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        for(SpeciesEvaluator evaluator : evaluators)
+            evaluator.interrupt();
+        pruner.interrupt();
+
+        for(Species s : evaluatedSpecies)
+            System.out.println(s.fitness);
+        System.out.println(evaluatedSpecies.size());
+    }
+
+    public void initPopulation(Config config)
+    {
+        //Keeping the full population ever is super memory inefficient, so only keep the top X results relative to both population size and absolute
+        System.out.println("Creating initial population");
+        long start = System.currentTimeMillis();
+        //Create species
+        for(int i = 0; i < config.populationSize; i++)
+        {
+            FFNeuralNetwork nn = new FFNeuralNetwork(FFNeuralNetwork.ConnectionStrategy.INDIRECTLY_CONNECTED, config);
+            Species s = new Species(nn);
+            unevaluatedSpecies.add(s);
+        }
+        //System.out.println(unevaluatedSpecies.remove().brain.toString());;
+        System.out.println("Initial population created in " + (System.currentTimeMillis() - start)/1000F + " seconds");
     }
 
     public void exit()

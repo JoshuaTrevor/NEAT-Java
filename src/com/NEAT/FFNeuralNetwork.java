@@ -9,13 +9,13 @@ public class FFNeuralNetwork
     ArrayList<NNNode>[] layers;
     public enum ConnectionStrategy {FULLY_CONNECTED, INDIRECTLY_CONNECTED}
     Config config;
-    public FFNeuralNetwork(int[] layerSizes, ConnectionStrategy strategy, Config config)
+    public FFNeuralNetwork(ConnectionStrategy strategy, Config config)
     {
         this.config = config;
-        layers = new ArrayList[layerSizes.length];
+        layers = new ArrayList[config.initialDimensions.length];
 
         int layerID = 0;
-        for (int layerSize : layerSizes)
+        for (int layerSize : config.initialDimensions)
         {
             layers[layerID] = new ArrayList<>();
             for(int i = 0; i < layerSize; i++)
@@ -35,6 +35,7 @@ public class FFNeuralNetwork
 
     public void initConnections(ConnectionStrategy strategy, float par1)
     {
+        //Estimate connections based layer size, connectivity and strategy (whether to include last layer or not)
         for(int i = 0; i < layers.length; i++)
         {
             switch(strategy)
@@ -50,6 +51,8 @@ public class FFNeuralNetwork
     //Should make concurrent at some point
     //Remember: if the size of one of the other layers changes I won't know concurrently
     //This initialising doesn't change the size of any of the layers, but later that might mess up ors omething idk
+
+    //Connects given layer to successive layer
     public void initConnectForward(int layerID, float connectivity)
     {
         //Using connectivity determine how many nodes to connect to
@@ -117,10 +120,17 @@ public class FFNeuralNetwork
             for (NNNode n1 : layers[i])
             {
                 float activation = n1.activation();
-                for (Object n2 : n1.connections.keySet())
+                for (Object o : n1.connections.keySet())
                 {
+                    int n2 = (int) o;
+                    int index = -1;
                     //TODO: Make this a binary search for efficiency later!
-                    int index = layers[i+1].indexOf(n2);
+                    for(int j = 0; j < layers[i+1].size(); j++)
+                    {
+                        //efficientify later
+                        if(layers[i+1].get(j).id == n2)
+                            index = j;
+                    }
                     layers[i+1].get(index).input += activation;
                 }
             }
@@ -131,7 +141,8 @@ public class FFNeuralNetwork
         Object[] outputObjects = layers[layers.length-1].toArray();
         for (int i = 0; i < outputObjects.length; i++)
         {
-            output[i] = (float)outputObjects[i];
+            System.out.println("checked output: " + ((NNNode)outputObjects[i]).activation());
+            output[i] = ((NNNode)outputObjects[i]).activation();
         }
 
         //Reset the incoming energy to each node (start at one because don't need to reset input layer)
@@ -147,15 +158,15 @@ public class FFNeuralNetwork
 
     public String toString()
     {
-        String output = "-------------------------------\n";
+        StringBuilder output = new StringBuilder("-------------------------------\n");
         for (int i = 0; i < layers.length; i++)
         {
             for (int j = 0; j < layers[i].size(); j++)
             {
-                output += (layers[i].get(j).toString());
+                output.append(layers[i].get(j).toString());
             }
-            output += "-----------------\n";
+            output.append("-----------------\n");
         }
-        return output;
+        return output.toString();
     }
 }

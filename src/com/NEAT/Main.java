@@ -16,13 +16,16 @@ public class Main {
 
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
-        //System.out.println("Please enter test param");
-        int testParam = 2;//sc.nextInt();
-        FFNeuralNetwork nn = new FFNeuralNetwork(new int[] {testParam, testParam, testParam},
-                FFNeuralNetwork.ConnectionStrategy.INDIRECTLY_CONNECTED, new Config());
+        ExampleImplementation e = new ExampleImplementation();
+        e.evolve();
+    }
+
+    public static void testMutation()
+    {
+        int testParam = 3;//sc.nextInt();
+        FFNeuralNetwork nn = new FFNeuralNetwork(FFNeuralNetwork.ConnectionStrategy.INDIRECTLY_CONNECTED, new Config());
         Mutator mutator = new Mutator();
-        //System.out.println(nn.toString());
+        System.out.println(nn.toString());
         mutator.mutate(nn);
         System.out.println(nn.toString());
     }
