@@ -7,6 +7,7 @@ package com.NEAT;
 
 import com.NEAT.Workers.Pruner;
 import com.NEAT.Workers.SpeciesEvaluator;
+import com.NEAT.Workers.WorkerMonitor;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListSet;
@@ -20,39 +21,86 @@ public class EvolutionController
     }
     public Queue<Species> unevaluatedSpecies = new LinkedList<>();
     public ConcurrentSkipListSet<Species> evaluatedSpecies = new ConcurrentSkipListSet<>();
-    public void train(Config config, NeatTrainer implementation)
-    {
-        //Create the worker threads
+    public Object evaluationFinishedObject = new Object();
+    public boolean waiting = false;
 
-        //Create evaluators which compute the fitness of species from the queue
-        ArrayList<SpeciesEvaluator> evaluators = new ArrayList<>();
+    public final Pruner pruner;
+    public final SpeciesEvaluator[] evaluators;
+    public final WorkerMonitor workerMonitor;
+    Config config;
+    public EvolutionController(Config config, NeatTrainer implementation)
+    {
+        this.config = config;
+        SpeciesEvaluator[] tempEvaluators = new SpeciesEvaluator[config.workers];
         for(int i = 0; i < config.workers; i++)
         {
-            evaluators.add(new SpeciesEvaluator(implementation, this));
+            tempEvaluators[i] = (new SpeciesEvaluator(implementation, this));
         }
+        evaluators = tempEvaluators;
+        pruner = new Pruner(this, config);
+        workerMonitor = new WorkerMonitor(this);
+    }
 
-        //Create a "pruner" who removes undesirable species
-        Pruner pruner = new Pruner(this, config);
-
-
+    public void train()
+    {
+        workerMonitor.start();
         for(SpeciesEvaluator evaluator : evaluators)
             evaluator.start();
         pruner.start();
 
+
+        //If this works way faster than worker threads might use more memory than I want.
+        //Eventually should have a "wait" system where if unevaluatedSpecies backlog reaches a certain size it should pause.
+
+        //Also another todo for tomorrow, have a "finished" flag from both this and the mutator,
+        // if finishFlag AND queueSize == 0 then go to next step
         initPopulation(config);
 
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+
+        final Mutator mutator = new Mutator();
+
+        //check if done then do mutate
+        //mutator.mutate
+
+        //Evaluators should be the ones which notify pruners, not other things.
+        //I don't think anything in this class should regularly notify pruners
+        for(int j = 0; j < evaluators.length; j++)
+        {
+            if(evaluators[j].waiting)
+            {
+                synchronized(evaluators[j])
+                {
+                    evaluators[j].notify();
+                }
+            }
         }
+
+        waiting = true;
+        await();
+
         for(SpeciesEvaluator evaluator : evaluators)
             evaluator.interrupt();
         pruner.interrupt();
+        workerMonitor.interrupt();
 
-        for(Species s : evaluatedSpecies)
-            System.out.println(s.fitness);
+//        for(Species s : evaluatedSpecies)
+//            System.out.println(s.fitness);
+        System.out.println("Best fitness: " + evaluatedSpecies.last().fitness);
         System.out.println(evaluatedSpecies.size());
+        System.out.println("leftovers: " + unevaluatedSpecies.size());
+        //Still need to deal with leftovers
+    }
+
+    //Mutate species, this may need to be delegated to worker threads depending on how intensive it is.
+    public void evolve(Mutator mutator)
+    {
+        try {
+            evaluationFinishedObject.wait(); //NEED to deal with edge cases where evaluation of worker threads finishes before this wait is called so it never gets finished. Maybe handshake? So they call wait constantly until this class sends acknowledgement? I like that method.
+            //NEED GOOD EVOLUTION HERE, for now just mutate
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initPopulation(Config config)
@@ -66,14 +114,37 @@ public class EvolutionController
             FFNeuralNetwork nn = new FFNeuralNetwork(FFNeuralNetwork.ConnectionStrategy.INDIRECTLY_CONNECTED, config);
             Species s = new Species(nn);
             unevaluatedSpecies.add(s);
+
+            for(int j = 0; j < evaluators.length; j++)
+            {
+                if(evaluators[j].waiting)
+                {
+                    synchronized(evaluators[j])
+                    {
+                        evaluators[j].notify();
+                    }
+                }
+            }
         }
         //System.out.println(unevaluatedSpecies.remove().brain.toString());;
         System.out.println("Initial population created in " + (System.currentTimeMillis() - start)/1000F + " seconds");
     }
 
+    public synchronized void await()
+    {
+        try {
+            wait();
+            System.out.println("Permission received");
+        } catch (InterruptedException e) {
+            System.out.println("Main wait interrupted.");
+        }
+        waiting = false;
+    }
+
     public void exit()
     {
         //Try to save progress
-        //Then exit
+        //Close all processor threads
+        //Then exit program
     }
 }

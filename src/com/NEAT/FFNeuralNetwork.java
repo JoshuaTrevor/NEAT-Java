@@ -94,7 +94,14 @@ public class FFNeuralNetwork
     public float initWeight()
     {
         Random r = new Random();
-        return r.nextFloat();
+        int hiddenNodes = 0;
+        for(int i = 1; i < layers.length-1; i++)
+        {
+            hiddenNodes += layers[i].size();
+        }
+        double bound = (1 / Math.sqrt(layers[0].size() + hiddenNodes));
+        int multi = r.nextFloat() < 0.5 ? -1 : 1;
+        return (float)(r.nextFloat() * bound * multi);
     }
 
     // Generate the output of the NN
@@ -131,7 +138,8 @@ public class FFNeuralNetwork
                         if(layers[i+1].get(j).id == n2)
                             index = j;
                     }
-                    layers[i+1].get(index).input += activation;
+
+                    layers[i+1].get(index).input += activation * (float)n1.connections.get(n2);
                 }
             }
         }
@@ -141,7 +149,7 @@ public class FFNeuralNetwork
         Object[] outputObjects = layers[layers.length-1].toArray();
         for (int i = 0; i < outputObjects.length; i++)
         {
-            System.out.println("checked output: " + ((NNNode)outputObjects[i]).activation());
+            //System.out.println("checked output: " + ((NNNode)outputObjects[i]).activation());
             output[i] = ((NNNode)outputObjects[i]).activation();
         }
 

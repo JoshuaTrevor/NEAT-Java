@@ -2,10 +2,7 @@ package com.NEAT;
 
 public class Species implements Comparable
 {
-    public long id; // Will probably need a concurrency safe ID dispenser class! Otherwise maybe just hash the brain somehow?
-    // Investigate https://stackoverflow.com/questions/11597386/objects-hash-vs-objects-hashcode-clarification-needed
-    //!!!!The default hashCode() of Object returns the memory address for the object.
-    //So it should work for ID as long as a deep copy is used for the brain!
+    public long id;
     public float fitness;
     public FFNeuralNetwork brain;
 
@@ -29,9 +26,8 @@ public class Species implements Comparable
     @Override
     public boolean equals(Object o)
     {
-        if (getClass() != o.getClass()) {
+        if (getClass() != o.getClass())
             return false;
-        }
 
         Species s = (Species)o;
         return this.id == s.id;
