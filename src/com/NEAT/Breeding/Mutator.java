@@ -1,17 +1,19 @@
-package com.NEAT;
+package com.NEAT.Breeding;
+
+import com.NEAT.FFNeuralNetwork;
+import com.NEAT.NNNode;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Mutator
 {
-    public void mutate(FFNeuralNetwork originalNN)
+    public void mutate(FFNeuralNetwork nn)
     {
-        FFNeuralNetwork nn = originalNN;
         Random r = new Random();
         //Don't loop through output layer when adding forwards connections so its -1
         //Also don't loop through input layer when adding nodes
-        for (int i = 0; i < originalNN.layers.length-1; i++)
+        for (int i = 0; i < nn.layers.length-1; i++)
         {
             for(NNNode n : nn.layers[i])
             {

@@ -1,6 +1,6 @@
 package com.NEAT;
 
-import java.util.Scanner;
+import com.NEAT.Breeding.Mutator;
 
 public class Main {
 
@@ -8,9 +8,7 @@ public class Main {
     // Created and initialised a feed forward NN with random weights when given layer dimensions.
 
     // Need to add:
-    // - Ability to mutate new nodes
     // - General breeding/evolution mechanics (fitness function, genus and species separation, breeding top 20%, clever mutation)
-    // - Concurrency in training (and maybe in initialisation)
     // - Memory efficiency (Currently implementation will run out of ram with large NN architecture)
     // - Interface to allow adaptively displaying the best of each generation (Create API with getCurrentBest method)
 

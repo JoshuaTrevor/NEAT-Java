@@ -33,6 +33,12 @@ public class Species implements Comparable
         return this.id == s.id;
     }
 
+    public Species clone()
+    {
+        return new Species(this.brain.copy());
+    }
+
+
     @Override
     public int hashCode() {
         return (int)this.id;

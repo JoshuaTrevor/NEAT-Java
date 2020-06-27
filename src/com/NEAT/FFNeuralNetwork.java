@@ -6,9 +6,9 @@ public class FFNeuralNetwork
 {
     //should have a list of layers
     //Each layer is a list of node objects
-    ArrayList<NNNode>[] layers;
-    public enum ConnectionStrategy {FULLY_CONNECTED, INDIRECTLY_CONNECTED}
-    Config config;
+    public ArrayList<NNNode>[] layers;
+    public enum ConnectionStrategy {FULLY_CONNECTED, INDIRECTLY_CONNECTED, MANUAL}
+    public Config config; //Todo - Try make this non global to avoid storing so many copies, may break mutator and some others
     public FFNeuralNetwork(ConnectionStrategy strategy, Config config)
     {
         this.config = config;
@@ -162,6 +162,22 @@ public class FFNeuralNetwork
             }
         }
         return output;
+    }
+
+    //Todo - make this work with added nodes, currently assumes the same nodes, then just adds corresp connections
+    public FFNeuralNetwork copy()
+    {
+        FFNeuralNetwork copy = new FFNeuralNetwork(ConnectionStrategy.MANUAL, this.config);
+        for(int i = 0; i < this.layers.length-1; i++)
+        {
+            for(int j = 0; j < this.layers[i].size(); j++)
+            {
+                NNNode n = copy.layers[i].get(j);
+                n.connections = this.layers[i].get(j).cloneConnections();
+            }
+        }
+
+        return copy;
     }
 
     public String toString()

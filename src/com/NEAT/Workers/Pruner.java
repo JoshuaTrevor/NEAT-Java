@@ -17,13 +17,15 @@ public class Pruner extends Thread
         this.config = config;
     }
 
+    //This gets called too much, Ideally need some way of not waking it up every time something is added
+    //But also avoiding situations where it doesn't get called and leaves a little bit on the end.
+    //Imoprtant to manage waiting otherwise process could be incorrectly considerd finished by workermonitor
     public void prune()
     {
         if(waiting) {
-            System.out.println("Pruner waiting for permission to resume");
             await();
         }
-        if(controller.evaluatedSpecies.size() > config.storedSpeciesLimit)
+        if(controller.evaluatedSpecies.size() > config.preservedSpeciesLimit)
         {
             //If the population is too large, reduce the least fit species
             //This should later be adjust to take a more sophisticated measure and remove things which don't foster diversity
@@ -51,9 +53,8 @@ public class Pruner extends Thread
                 controller.workerMonitor.notify();
             }
             wait();
-            System.out.println("Permission received");
         } catch (InterruptedException e) {
-            System.out.println("Pruner wait interrupted.");;
+            controller.debug("Pruner wait interrupted.");;
             exit = true;
         }
         waiting = false;

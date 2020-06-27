@@ -7,6 +7,7 @@ public class WorkerMonitor extends Thread
 {
     final EvolutionController controller;
     boolean exit;
+    public boolean finished = false;
     public WorkerMonitor(EvolutionController controller)
     {
         super();
@@ -16,23 +17,32 @@ public class WorkerMonitor extends Thread
     //If every worker is waiting, then the step is complete
     public void checkWorkers()
     {
-        if (controller.waiting && controller.pruner.waiting)
+        finished = workersFinished();
+        if (finished && controller.waiting)
         {
-            for(SpeciesEvaluator s : controller.evaluators)
-            {
-                if(!s.waiting)
-                {
-                    return;
-                }
-
-            }
             synchronized (controller)
             {
+                //System.out.println("Finish condition detected");
                 controller.notify();
             }
         }
-
         await();
+    }
+
+    public boolean workersFinished()
+    {
+        if (controller.waiting && controller.pruner.waiting)
+        {
+            for (SpeciesEvaluator s : controller.evaluators)
+            {
+                if (!s.waiting)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
     public void run()
@@ -47,9 +57,8 @@ public class WorkerMonitor extends Thread
     {
         try {
             wait();
-            System.out.println("Permission received");
         } catch (InterruptedException e) {
-            System.out.println("Monitor wait interrupted.");;
+            controller.debug("Monitor wait interrupted.");;
             exit = true;
         }
     }

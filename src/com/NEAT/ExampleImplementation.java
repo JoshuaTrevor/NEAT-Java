@@ -20,6 +20,7 @@ public class ExampleImplementation implements NeatTrainer
 
     public void evolve()
     {
+        //Interface could be improved by removing config as a parameter and instead getting it from a required getConfig method in the implementation
         EvolutionController ec = new EvolutionController(new Config(), this);
         ec.train();
     }

@@ -32,11 +32,13 @@ public class SpeciesEvaluator extends Thread
     //Calculate the fitness of species from the queue of unevaluated species
     public void processQueue()
     {
+
         //Maybe make this check a flag in the contrller instead of requiring manual interrupt
         if(waiting) {
-            System.out.println("Evaluator waiting for permission to resume");
+            //System.out.println("Evaluator waiting for permission to resume");
             await();
         }
+
         if(controller.unevaluatedSpecies.size() > 0)
         {
             try {
@@ -53,6 +55,7 @@ public class SpeciesEvaluator extends Thread
                     }
                 }
             } catch (NoSuchElementException e) {
+                //System.out.println("failed to remove element");
                 return;
             }
             return;
@@ -68,9 +71,9 @@ public class SpeciesEvaluator extends Thread
                 controller.workerMonitor.notify();
             }
             wait();
-            System.out.println("Permission received");
+            //System.out.println("Evaluator - Permission received");
         } catch (InterruptedException e) {
-            System.out.println("Evaluator wait interrupted.");;
+            controller.debug("Evaluator wait interrupted.");;
             exit = true;
         }
         waiting = false;

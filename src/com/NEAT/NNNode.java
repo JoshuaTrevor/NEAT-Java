@@ -9,10 +9,13 @@ import java.util.Random;
 public class NNNode
 {
     int layer; // The layer this node is in
-    int id;
+    public int id;
     HashMap connections = new HashMap<Integer, Float>(); // A list of connected nodes and their weights
     public float input;
 
+    //Important point, NNNodes are not technically necessary, as connections store all necessary information
+    //the inefficiency is probably minor though as there are no redundant connections and connections are 99% of the memory cost
+    //Importantly though for k means clustering that means that only connections are necessary, where each ID can be a dimension
     public NNNode(int layer, int nodeID)
     {
         this.layer = layer;
@@ -47,7 +50,7 @@ public class NNNode
         //Naive approach is to pick a random entry from the next layer, but have to make sure the connection doesn't exist
         Random r = new Random();
         ArrayList<Integer> candidates = new ArrayList<Integer>();
-        System.out.println("Connections size: " + connections.size());
+        //System.out.println("Connections size: " + connections.size());
 
         for (NNNode node : nextLayer)
         {
@@ -56,7 +59,7 @@ public class NNNode
                 candidates.add(node.id);
             }
         }
-        System.out.println("Candidates size: " + candidates.size());
+        //System.out.println("Candidates size: " + candidates.size());
 
         int target = candidates.size() > 1 ? r.nextInt(candidates.size()-1) : 0;
         this.addConnection(candidates.get(target), initWeight());
@@ -94,6 +97,18 @@ public class NNNode
         //Have some chance of adding a new connection, to do this first compare length of connections to size of next layer
         //Iterate over each connection and roll a random which is compared to config mutate rate, replace rate etc.
         //handle delete case in mutator class, don't worrya bout it here.
+    }
+
+    public HashMap<Integer, Float> cloneConnections()
+    {
+        HashMap clonedConnections = new HashMap<Integer, Float>();
+        for(Object key : connections.keySet())
+        {
+            int cloneID = (int)key;
+            float weight = (float)connections.get(key);
+            clonedConnections.put(cloneID, weight);
+        }
+        return clonedConnections;
     }
 
     public String toString()
