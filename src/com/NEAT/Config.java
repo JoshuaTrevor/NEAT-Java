@@ -5,7 +5,7 @@ package com.NEAT;
 public class Config
 {
     public int[] initialDimensions = new int[] {5, 200, 25};
-    public int populationSize = 100000;
+    public int populationSize = 25000;
     public int workers = 4;
     public float preservedSpeciesRate = 0.05F;
     public final int preservedSpeciesLimit = Math.round(preservedSpeciesRate*populationSize);  // This should maybe be defined as a fraction of the population size

@@ -76,7 +76,7 @@ public class NeatImplementation implements NeatTrainer
                 int moves = 0;
                 while(!snake.dead) {
                     moves++;
-                    if(moves > 50)
+                    if(moves > 20)
                         snake.dead = true;
                     float[] output = ec.recentBest.brain.feed(snake.getState());
 

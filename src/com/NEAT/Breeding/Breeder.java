@@ -53,12 +53,7 @@ public class Breeder
 
 
         //Temporary method to ensure minimal backwards evolution
-        controller.unevaluatedSpecies.add(parentSpecies.get(0));
-        controller.unevaluatedSpecies.add(parentSpecies.get(1));
-        controller.unevaluatedSpecies.add(parentSpecies.get(2));
-        controller.unevaluatedSpecies.add(parentSpecies.get(3));
-        controller.unevaluatedSpecies.add(parentSpecies.get(4));
-        controller.unevaluatedSpecies.add(parentSpecies.get(5));
+        controller.unevaluatedSpecies.addAll(parentSpecies);
         for(int i = 0; i < config.populationSize; i++)
         {
             //System.out.println("called");

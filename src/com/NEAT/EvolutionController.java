@@ -62,7 +62,7 @@ public class EvolutionController
 
         final Mutator mutator = new Mutator();
         
-        for(int i = 0; i < 150; i++)
+        for(int i = 0; i < 10000; i++)
         {
             currentGeneration = i + 1;
             System.out.println("(" + currentGeneration + ")" +
@@ -77,6 +77,11 @@ public class EvolutionController
 
             notifyEvaluators();
             waiting = true;
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if (!workerMonitor.finished)
                 await();
         }
