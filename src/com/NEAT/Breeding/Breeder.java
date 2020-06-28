@@ -38,6 +38,7 @@ public class Breeder
             //High to low
             parentSpecies.add(evaluatedSpecies.pollLast());
         }
+        //The above step should probably be completed before the evaluation starts, otherwise excessive additions may be recorded
 
         //Mutate top entries
         //TODO - Problem for next time
@@ -51,6 +52,13 @@ public class Breeder
         //Currently defining genuses is quite complicated but I'll hopefully come back to it. K-means is promising
 
 
+        //Temporary method to ensure minimal backwards evolution
+        controller.unevaluatedSpecies.add(parentSpecies.get(0));
+        controller.unevaluatedSpecies.add(parentSpecies.get(1));
+        controller.unevaluatedSpecies.add(parentSpecies.get(2));
+        controller.unevaluatedSpecies.add(parentSpecies.get(3));
+        controller.unevaluatedSpecies.add(parentSpecies.get(4));
+        controller.unevaluatedSpecies.add(parentSpecies.get(5));
         for(int i = 0; i < config.populationSize; i++)
         {
             //System.out.println("called");

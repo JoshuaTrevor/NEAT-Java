@@ -48,10 +48,6 @@ public class Pruner extends Thread
     public synchronized void await()
     {
         try {
-            synchronized(controller.workerMonitor)
-            {
-                controller.workerMonitor.notify();
-            }
             wait();
         } catch (InterruptedException e) {
             controller.debug("Pruner wait interrupted.");;

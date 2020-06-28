@@ -26,7 +26,6 @@ public class WorkerMonitor extends Thread
                 controller.notify();
             }
         }
-        await();
     }
 
     public boolean workersFinished()

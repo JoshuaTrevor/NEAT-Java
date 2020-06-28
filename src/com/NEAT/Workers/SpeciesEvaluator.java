@@ -27,15 +27,13 @@ public class SpeciesEvaluator extends Thread
         {
             processQueue();
         }
+        System.out.println("finished");
     }
 
     //Calculate the fitness of species from the queue of unevaluated species
     public void processQueue()
     {
-
-        //Maybe make this check a flag in the contrller instead of requiring manual interrupt
         if(waiting) {
-            //System.out.println("Evaluator waiting for permission to resume");
             await();
         }
 
@@ -44,8 +42,11 @@ public class SpeciesEvaluator extends Thread
             try {
                 Species spec = controller.unevaluatedSpecies.remove();
                 if(spec == null)
+                {
+                    waiting = true;
                     return;
-                spec.fitness = implementation.getFitness(spec.brain);
+                }
+                spec.fitness = implementation.evaluateSpecies(spec.brain);
                 controller.evaluatedSpecies.add(spec);
                 if(controller.pruner.waiting)
                 {
@@ -54,8 +55,10 @@ public class SpeciesEvaluator extends Thread
                         controller.pruner.notify();
                     }
                 }
+
             } catch (NoSuchElementException e) {
                 //System.out.println("failed to remove element");
+                waiting = true;
                 return;
             }
             return;
@@ -66,10 +69,6 @@ public class SpeciesEvaluator extends Thread
     public synchronized void await()
     {
         try {
-            synchronized(controller.workerMonitor)
-            {
-                controller.workerMonitor.notify();
-            }
             wait();
             //System.out.println("Evaluator - Permission received");
         } catch (InterruptedException e) {

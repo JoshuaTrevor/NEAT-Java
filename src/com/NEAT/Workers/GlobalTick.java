@@ -3,7 +3,7 @@ package com.NEAT.Workers;
 
 import com.NEAT.EvolutionController;
 
-public class GlobalTick extends Thread
+public class GlobalTick implements Runnable
 {
     EvolutionController controller;
     public GlobalTick(EvolutionController controller)
@@ -14,21 +14,7 @@ public class GlobalTick extends Thread
     @Override
     public void run()
     {
-        while(!Thread.interrupted())
-        {
-            try
-            {
-                Thread.sleep(300);
-                synchronized (controller.workerMonitor)
-                {
-                    controller.workerMonitor.checkWorkers();
-                }
-            }
-
-            catch (InterruptedException e)
-            {
-                break;
-            }
-        }
+            //System.out.println("tick");
+            controller.workerMonitor.checkWorkers();
     }
 }

@@ -4,10 +4,10 @@ package com.NEAT;
 //Because each method may only need a fraction of the config, so that would be a way of decoupling
 public class Config
 {
-    public int[] initialDimensions = new int[] {3, 200, 25};
-    public int populationSize = 100;
+    public int[] initialDimensions = new int[] {5, 200, 25};
+    public int populationSize = 100000;
     public int workers = 4;
-    public float preservedSpeciesRate = 0.3F;
+    public float preservedSpeciesRate = 0.05F;
     public final int preservedSpeciesLimit = Math.round(preservedSpeciesRate*populationSize);  // This should maybe be defined as a fraction of the population size
 
     //Mutation options

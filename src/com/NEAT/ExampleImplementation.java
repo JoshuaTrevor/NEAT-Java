@@ -2,11 +2,9 @@ package com.NEAT;
 
 public class ExampleImplementation implements NeatTrainer
 {
-
-    //There should be a max value implemented that's related to the sigmoid function
-    //Maybe the sigmoid function should use it for upper/lower bound? Just to make sure it doesn't get ludicrous with incrementing
+    //Trivial example to test functionality. By training with this fitness function fitness should quickly converge to the number of outputs.
     @Override
-    public float getFitness(FFNeuralNetwork nn)
+    public float evaluateSpecies(FFNeuralNetwork nn)
     {
         //This should just produce the sum of all outputs, therefore each value should be maxxed by training
         float sum = 0;
@@ -20,7 +18,6 @@ public class ExampleImplementation implements NeatTrainer
 
     public void evolve()
     {
-        //Interface could be improved by removing config as a parameter and instead getting it from a required getConfig method in the implementation
         EvolutionController ec = new EvolutionController(new Config(), this);
         ec.train();
     }

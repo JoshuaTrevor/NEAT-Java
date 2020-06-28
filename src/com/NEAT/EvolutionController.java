@@ -7,27 +7,19 @@ package com.NEAT;
 
 import com.NEAT.Breeding.Breeder;
 import com.NEAT.Breeding.Mutator;
-import com.NEAT.Workers.GlobalTick;
-import com.NEAT.Workers.Pruner;
-import com.NEAT.Workers.SpeciesEvaluator;
-import com.NEAT.Workers.WorkerMonitor;
+import com.NEAT.Workers.*;
 
 import java.util.LinkedList;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.*;
 
 public class EvolutionController
 {
-    //todo - return the highest fitness NN of the most recent generation
-    public FFNeuralNetwork getRecentBest()
-    {
-        return null;
-    }
+    public Species recentBest;
+    public int currentGeneration = 0;
     public ConcurrentLinkedQueue<Species> unevaluatedSpecies = new ConcurrentLinkedQueue<>();
     public ConcurrentSkipListSet<Species> evaluatedSpecies = new ConcurrentSkipListSet<>();
-    public Object evaluationFinishedObject = new Object();
     public boolean waiting = false;
-    protected final boolean debug = false;
+    final boolean debug = true;
 
     public final Pruner pruner;
     public final SpeciesEvaluator[] evaluators;
@@ -53,7 +45,8 @@ public class EvolutionController
         for(SpeciesEvaluator evaluator : evaluators)
             evaluator.start();
         pruner.start();
-        ticker.start();
+        ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+        exec.scheduleAtFixedRate(ticker, 0, 1, TimeUnit.SECONDS);
         initPopulation(config);
 
 
@@ -65,18 +58,19 @@ public class EvolutionController
             e.printStackTrace();
         }
         if(!workerMonitor.finished)
-            await(); //FIX! Only await if the condition is not ALREADY finished! Have a flag in monitor to show if everything was waiting last query
-        System.out.println("Passed the await");
-        //Now that the population has been initialised and evaluated, create a new population
-        //This population should be evaluated and created simultaneously
-        final Mutator mutator = new Mutator();
+            await();
 
-        for(int i = 0; i < 50; i++)
+        final Mutator mutator = new Mutator();
+        
+        for(int i = 0; i < 150; i++)
         {
-            System.out.println("Best fitness: " + evaluatedSpecies.last().fitness);
+            currentGeneration = i + 1;
+            System.out.println("(" + currentGeneration + ")" +
+                    "fitness: " + mean(evaluatedSpecies.toArray()) +"Best fitness: " + evaluatedSpecies.last().fitness);
+            recentBest = evaluatedSpecies.last().clone();
             evolve(mutator);
             try {
-                Thread.sleep(100);
+                Thread.sleep(600);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -84,13 +78,13 @@ public class EvolutionController
             notifyEvaluators();
             waiting = true;
             if (!workerMonitor.finished)
-                await(); //FIX! Only await if the condition is not ALREADY finished! Have a flag in monitor to show if everything was waiting last query
+                await();
         }
 
         for(SpeciesEvaluator evaluator : evaluators)
             evaluator.interrupt();
         pruner.interrupt();
-        ticker.interrupt();
+
 
 //        for(Species s : evaluatedSpecies)
 //            System.out.println(s.fitness);
@@ -153,6 +147,14 @@ public class EvolutionController
         {
             System.out.println("[DEBUG] " + str);
         }
+    }
+
+    public float mean(Object[] list) {
+        float sum = 0;
+        for (int i = 0; i < list.length; i++) {
+            sum += ((Species)list[i]).fitness;
+        }
+        return sum / list.length;
     }
 
     public void exit()

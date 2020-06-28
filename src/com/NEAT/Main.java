@@ -1,5 +1,9 @@
 package com.NEAT;
 
+import com.Examples.Snake.Display;
+import com.Examples.Snake.Grid;
+import com.Examples.Snake.NeatImplementation;
+import com.Examples.Snake.Snake;
 import com.NEAT.Breeding.Mutator;
 
 public class Main {
@@ -14,8 +18,23 @@ public class Main {
 
     public static void main(String[] args)
     {
-        ExampleImplementation e = new ExampleImplementation();
-        e.evolve();
+        //Snake snake = new Snake(true);
+
+        NeatImplementation n = new NeatImplementation();
+        n.evolve();
+//        for(int i = 0; i < 18; i++) {
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            snake.move(Snake.Direction.RIGHT);
+//        }
+
+
+
+        //ExampleImplementation e = new ExampleImplementation();
+        //e.evolve();
     }
 
     public static void testMutation()
