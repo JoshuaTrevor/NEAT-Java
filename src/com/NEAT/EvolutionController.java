@@ -20,6 +20,7 @@ public class EvolutionController
     public ConcurrentSkipListSet<Species> evaluatedSpecies = new ConcurrentSkipListSet<>();
     public boolean waiting = false;
     final boolean debug = true;
+    public int trialCount = 30;
 
     public final Pruner pruner;
     public final SpeciesEvaluator[] evaluators;
@@ -62,12 +63,15 @@ public class EvolutionController
 
         final Mutator mutator = new Mutator();
         
-        for(int i = 0; i < 10000; i++)
+        for(int i = 0; i < 1000000; i++)
         {
             currentGeneration = i + 1;
-            System.out.println("(" + currentGeneration + ")" +
-                    "fitness: " + mean(evaluatedSpecies.toArray()) +"Best fitness: " + evaluatedSpecies.last().fitness);
+            System.out.println("(Gen " + currentGeneration + ")" +
+                    "fitness: " + mean(evaluatedSpecies.toArray()) +" Best fitness: " + evaluatedSpecies.last().fitness);
+            if (mean(evaluatedSpecies.toArray()) > 25.7)
+                trialCount = 100;
             recentBest = evaluatedSpecies.last().clone();
+            saveRecent();
             evolve(mutator);
             try {
                 Thread.sleep(600);
@@ -113,6 +117,8 @@ public class EvolutionController
         //Create species
         for(int i = 0; i < config.populationSize; i++)
         {
+            if(i%10==0)
+                System.out.println(i);
             FFNeuralNetwork nn = new FFNeuralNetwork(FFNeuralNetwork.ConnectionStrategy.INDIRECTLY_CONNECTED, config);
             Species s = new Species(nn);
             unevaluatedSpecies.add(s);
@@ -160,6 +166,11 @@ public class EvolutionController
             sum += ((Species)list[i]).fitness;
         }
         return sum / list.length;
+    }
+
+    public void saveRecent()
+    {
+
     }
 
     public void exit()

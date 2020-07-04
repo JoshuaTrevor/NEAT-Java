@@ -12,10 +12,12 @@ public class Snake
     Grid grid;
     Display d;
     boolean hasEaten = false;
+    int[] usedMoves = {0, 0, 0, 0};
     boolean dead;
     boolean shouldRender;
-    int rows = 10;
-    int cols = 10;
+    int movesSinceApple = 0;
+    int rows = 5;
+    int cols = 5;
 
     public int applesEaten = 0;
 
@@ -44,7 +46,7 @@ public class Snake
         moveSquare(c, dir);
 
         snake.add(new Coords(startX, startY));
-        //snake.add(c); //For now single segment start
+        snake.add(c); //For now single segment start
 
         setFoodLocation();
         if(shouldRender)
@@ -69,6 +71,8 @@ public class Snake
 
     public void move(Direction d)
     {
+        usedMoves[d.ordinal()] = 1;
+        movesSinceApple++;
         //Move the head and save it's old position
         Coords oldCoords = snake.get(0).copy();
         Coords temp;
@@ -95,10 +99,8 @@ public class Snake
         {
             hasEaten = true;
             applesEaten++;
-
-            //Temporary change to teach nn to go to first apple properly
-            dead=true;
-            //setFoodLocation();
+            movesSinceApple = 0;
+            setFoodLocation();
         }
 
         if(shouldRender)
@@ -162,11 +164,39 @@ public class Snake
 
     public float[] getState()
     {
-        float[] state = new float[4];
-        state[0] = snake.get(0).x;
-        state[1] = snake.get(0).y;
-        state[2] = food.x;
-        state[3] = food.y;
+        float[] state = new float[rows*cols];
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < cols; j++)
+            {
+                if(coordInsideSnake(new Coords(j, i)))
+                {
+                    state[i * cols + j] = -1;
+                }
+                else if(j == food.x && i == food.y)
+                {
+                    state[i * cols + j] = 2;
+                }
+
+                else if(j == snake.get(0).x && i == snake.get(0).y)
+                {
+                    state[i * cols + j] = 1;
+                }
+            }
+        }
+//        float[] state = new float[6];
+//        state[0] = snake.get(0).x;
+//        state[1] = snake.get(0).y;
+//        state[2] = snake.get(1).x;
+//        state[3] = snake.get(1).y;
+//        state[4] = food.x;
+//        state[5] = food.y;
+
+        //Normalise values
+        for(int i = 0; i < state.length; i++)
+        {
+            state[i] = state[i]/2F;
+        }
 
         return state;
     }

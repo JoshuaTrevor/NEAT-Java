@@ -193,4 +193,27 @@ public class FFNeuralNetwork
         }
         return output.toString();
     }
+
+    public String saveToString()
+    {
+        StringBuilder output = new StringBuilder("");
+        for (int i = 0; i < layers.length; i++)
+        {
+            output.append("Layer: " + i);
+            for (int j = 0; j < layers[i].size(); j++)
+            {
+                output.append("Node: " + j);
+                for(Object o : layers[i].get(j).connections.keySet())
+                {
+                    int toNode = (int)o;
+                    output.append("Connection to: " + toNode + " -- " +
+                            layers[i].get(j).connections.get(toNode));
+                    output.append("Connections END");
+                }
+                output.append("Node END");
+            }
+            output.append("Layer END");
+        }
+        return output.toString();
+    }
 }

@@ -7,6 +7,6 @@ public class Display extends JFrame
     public Display(Grid g)
     {
         add(g);
-        this.setSize(398, 399);
+        this.setSize(800, 800);
     }
 }

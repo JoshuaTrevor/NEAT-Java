@@ -13,10 +13,10 @@ public class NeatImplementation implements NeatTrainer
     {
         float fitnessSum = 0;
         int fitnessCount = 0;
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 5; i++)
         {
             Snake snake = new Snake(false);
-            int startingManhattan = snake.manhattanDistanceToApple()+3;
+            //int startingManhattan = snake.manhattanDistanceToApple()+3;
             int moves = 0;
             while(!snake.dead)
             {
@@ -39,12 +39,19 @@ public class NeatImplementation implements NeatTrainer
                     System.exit(0);
                 }
                 snake.move(Snake.Direction.values()[maxValIndex]);
-                if(moves < startingManhattan)
+                if(moves < 30)
                     moves++;
-                else
+                else if (snake.movesSinceApple > 100)
                     snake.dead = true;
             }
-            fitnessSum += 18 - snake.manhattanDistanceToApple(); //snake.applesEaten + moves/20000F
+            float moveBonus = moves > 20 ? 20 : moves;
+            float usedMoveBonus = 0;
+            for(int x =0; x <4 ; x++)
+            {
+                usedMoveBonus+= snake.usedMoves[x];
+            }
+            usedMoveBonus = usedMoveBonus * 0.1F;
+            fitnessSum += snake.applesEaten + moveBonus/20000F + usedMoveBonus;
             fitnessCount++;
         }
         //System.out.println("Apples eaten: " + snake.applesEaten);
@@ -54,7 +61,7 @@ public class NeatImplementation implements NeatTrainer
     public void evolve()
     {
         Config config = new Config();
-        config.initialDimensions = new int[] {4, 10, 4};
+        config.initialDimensions = new int[] {25, 15, 4};
         EvolutionController ec = new EvolutionController(config, this);
         EvolveThread evolver = new EvolveThread(ec);
         evolver.start();
@@ -76,7 +83,7 @@ public class NeatImplementation implements NeatTrainer
                 int moves = 0;
                 while(!snake.dead) {
                     moves++;
-                    if(moves > 20)
+                    if(snake.movesSinceApple > 100)
                         snake.dead = true;
                     float[] output = ec.recentBest.brain.feed(snake.getState());
 
