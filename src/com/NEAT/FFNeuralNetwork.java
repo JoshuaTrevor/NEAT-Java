@@ -24,7 +24,7 @@ public class FFNeuralNetwork
             }
             layerID++;
         }
-        initConnections(strategy);
+        initConnections(strategy, 1F);
     }
 
     // Default to 70%
@@ -199,21 +199,34 @@ public class FFNeuralNetwork
         StringBuilder output = new StringBuilder("");
         for (int i = 0; i < layers.length; i++)
         {
-            output.append("Layer: " + i);
+            output.append("Layer: " + i + "\n");
             for (int j = 0; j < layers[i].size(); j++)
             {
-                output.append("Node: " + j);
+                output.append("Node: " + j + "\n");
                 for(Object o : layers[i].get(j).connections.keySet())
                 {
                     int toNode = (int)o;
                     output.append("Connection to: " + toNode + " -- " +
-                            layers[i].get(j).connections.get(toNode));
-                    output.append("Connections END");
+                            layers[i].get(j).connections.get(toNode) + "\n");
                 }
-                output.append("Node END");
+                output.append("Node END\n");
             }
-            output.append("Layer END");
+            output.append("Layer END\n");
         }
         return output.toString();
+    }
+
+    enum target {NODE, LAYER}
+    public void loadFromString(String strInput)
+    {
+        String[] lines = strInput.split("\n");
+
+        for(int pointer = 0; pointer < lines.length; pointer++)
+        {
+            if(lines[pointer].startsWith("Layer: "))
+            {
+
+            }
+        }
     }
 }

@@ -9,6 +9,8 @@ import com.NEAT.Breeding.Breeder;
 import com.NEAT.Breeding.Mutator;
 import com.NEAT.Workers.*;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.concurrent.*;
 
@@ -71,7 +73,8 @@ public class EvolutionController
             if (mean(evaluatedSpecies.toArray()) > 25.7)
                 trialCount = 100;
             recentBest = evaluatedSpecies.last().clone();
-            saveRecent();
+            if(currentGeneration % config.checkpointFreq == 0)
+                saveRecent();
             evolve(mutator);
             try {
                 Thread.sleep(600);
@@ -170,6 +173,17 @@ public class EvolutionController
 
     public void saveRecent()
     {
+        String brainStr = recentBest.brain.saveToString();
+        try {
+            PrintWriter out = new PrintWriter("BestBrain");
+            for(String line : brainStr.split("\n"))
+                out.println(line);
+            out.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Brain file not found");
+        }
+        System.out.println("Saved!");
 
     }
 

@@ -16,8 +16,8 @@ public class Snake
     boolean dead;
     boolean shouldRender;
     int movesSinceApple = 0;
-    int rows = 5;
-    int cols = 5;
+    int rows = 7;
+    int cols = 7;
 
     public int applesEaten = 0;
 
@@ -36,8 +36,8 @@ public class Snake
         this.shouldRender = shouldRender;
         //Init snake position
         Random r = new Random();
-        int startX = r.nextInt(cols-2)+2;
-        int startY = r.nextInt(rows-2)+2;
+        int startX = r.nextInt(cols-1)+1;
+        int startY = r.nextInt(rows-1)+1;
 
         //Create a second body part which is offset to teach the snake not to eat itself
         int offset = r.nextInt(4);
@@ -71,7 +71,7 @@ public class Snake
 
     public void move(Direction d)
     {
-        usedMoves[d.ordinal()] = 1;
+        usedMoves[moveToIndex(d)] = 1;
         movesSinceApple++;
         //Move the head and save it's old position
         Coords oldCoords = snake.get(0).copy();
@@ -162,6 +162,16 @@ public class Snake
         }
     }
 
+    public int moveToIndex(Direction d)
+    {
+        return switch (d) {
+            case LEFT -> 0;
+            case RIGHT -> 1;
+            case UP -> 2;
+            case DOWN -> 3;
+        };
+    }
+
     public float[] getState()
     {
         float[] state = new float[rows*cols];
@@ -206,5 +216,26 @@ public class Snake
         int xDist = Math.abs(snake.get(0).x - food.x);
         int yDist = Math.abs(snake.get(0).y - food.y);
         return xDist + yDist;
+    }
+
+    public void reset()
+    {
+        snake.clear();
+        Random r = new Random();
+        int startX = r.nextInt(cols-1)+1;
+        int startY = r.nextInt(rows-1)+1;
+        this.dead=false;
+
+        //Create a second body part which is offset to teach the snake not to eat itself
+        int offset = r.nextInt(4);
+        Direction dir = Direction.values()[offset];
+        Coords c = new Coords(startX, startY);
+        moveSquare(c, dir);
+
+        snake.add(new Coords(startX, startY));
+        snake.add(c); //For now single segment start
+
+        setFoodLocation();
+        pushGraphicsChanges();
     }
 }

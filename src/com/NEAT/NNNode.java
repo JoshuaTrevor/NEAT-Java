@@ -84,6 +84,11 @@ public class NNNode
                 //System.out.println("old: " + connections.get(o));
                 float newWeight = (float)connections.get(o) + (r.nextFloat() * 2 * config.mutateAmount) - config.mutateAmount;
                 //System.out.println("new: " + newWeight);
+
+                if(r.nextFloat() < config.superMutateRate)
+                {
+                    newWeight = (float)connections.get(o) + (r.nextFloat() * 2 * config.superMutateAmount) - config.superMutateAmount;
+                }
                 connections.put(o, newWeight);
             }
 //            System.out.println("CHANGED NODE IS: ");

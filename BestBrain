@@ -1,0 +1,1986 @@
+Layer: 0
+Node: 0
+Connection to: 0 -- -0.57642794
+Connection to: 1 -- -0.19700311
+Connection to: 2 -- 0.39408073
+Connection to: 3 -- 0.090258986
+Connection to: 4 -- 0.9033476
+Connection to: 5 -- -0.08626752
+Connection to: 6 -- -0.23850538
+Connection to: 7 -- 0.18884087
+Connection to: 8 -- -0.85120094
+Connection to: 9 -- 0.8342154
+Connection to: 10 -- 1.9326173
+Connection to: 11 -- 0.23408735
+Connection to: 12 -- -0.5604118
+Connection to: 13 -- 0.09589529
+Connection to: 14 -- 0.5722389
+Connection to: 15 -- -1.5119798
+Connection to: 16 -- -0.9269961
+Connection to: 17 -- 0.2032741
+Connection to: 18 -- -0.54470146
+Connection to: 19 -- -0.8436701
+Connection to: 20 -- -0.015275925
+Connection to: 21 -- -0.5072066
+Connection to: 22 -- 0.27587667
+Connection to: 23 -- -0.10036072
+Connection to: 24 -- 0.24575296
+Connection to: 25 -- 0.7677399
+Connection to: 26 -- 1.0523344
+Node END
+Node: 1
+Connection to: 0 -- 0.23449847
+Connection to: 1 -- -0.6147087
+Connection to: 2 -- 2.1117887
+Connection to: 3 -- -1.2811873
+Connection to: 4 -- 0.24894625
+Connection to: 5 -- 0.3030155
+Connection to: 6 -- -0.033590183
+Connection to: 7 -- 1.371493
+Connection to: 8 -- -0.12846932
+Connection to: 9 -- 1.5249355
+Connection to: 10 -- 0.6960535
+Connection to: 11 -- 0.28141734
+Connection to: 12 -- 2.0537746
+Connection to: 13 -- 0.38960007
+Connection to: 14 -- -0.28714532
+Connection to: 15 -- -2.9129612
+Connection to: 16 -- 0.3333373
+Connection to: 17 -- -0.58541155
+Connection to: 18 -- -0.21964952
+Connection to: 19 -- 0.4363896
+Connection to: 20 -- -0.29012895
+Connection to: 21 -- -0.32734174
+Connection to: 22 -- -0.87316096
+Connection to: 23 -- 0.9739827
+Connection to: 24 -- 0.70362556
+Connection to: 25 -- -1.2053525
+Connection to: 26 -- -0.47507194
+Node END
+Node: 2
+Connection to: 0 -- 0.5409206
+Connection to: 1 -- -0.43080804
+Connection to: 2 -- -0.5589789
+Connection to: 3 -- 0.9427104
+Connection to: 4 -- 0.892822
+Connection to: 5 -- -1.0849181
+Connection to: 6 -- 1.3974802
+Connection to: 7 -- -0.19241449
+Connection to: 8 -- -0.9663222
+Connection to: 9 -- 0.17638963
+Connection to: 10 -- 0.121142596
+Connection to: 11 -- 0.69688714
+Connection to: 12 -- -1.5016245
+Connection to: 13 -- -0.7952429
+Connection to: 14 -- -0.20683935
+Connection to: 15 -- -0.2327835
+Connection to: 16 -- 0.8293929
+Connection to: 17 -- 0.37873933
+Connection to: 18 -- 1.1323568
+Connection to: 19 -- -2.3103437
+Connection to: 20 -- -0.1448138
+Connection to: 21 -- 1.5705891
+Connection to: 22 -- 1.0898229
+Connection to: 23 -- 0.8589306
+Connection to: 24 -- 0.32484695
+Connection to: 25 -- -0.367882
+Connection to: 26 -- -1.6528711
+Node END
+Node: 3
+Connection to: 0 -- -0.16239347
+Connection to: 1 -- -0.49869183
+Connection to: 2 -- 0.96009076
+Connection to: 3 -- -0.53389156
+Connection to: 4 -- 0.73625433
+Connection to: 5 -- 0.36567357
+Connection to: 6 -- -0.69056886
+Connection to: 7 -- 0.109861195
+Connection to: 8 -- -1.1509793
+Connection to: 9 -- -0.12965304
+Connection to: 10 -- -0.108100474
+Connection to: 11 -- -1.6672735
+Connection to: 12 -- 1.7418374
+Connection to: 13 -- 0.6810702
+Connection to: 14 -- 1.1288975
+Connection to: 15 -- 1.3491186
+Connection to: 16 -- 0.39834616
+Connection to: 17 -- -0.045685314
+Connection to: 18 -- -0.28345796
+Connection to: 19 -- 0.067609966
+Connection to: 20 -- -1.4460878
+Connection to: 21 -- -1.042647
+Connection to: 22 -- -2.0131464
+Connection to: 23 -- 1.1893654
+Connection to: 24 -- 1.6184663
+Connection to: 25 -- 0.0014394522
+Connection to: 26 -- 0.079170495
+Node END
+Node: 4
+Connection to: 0 -- -1.2631844
+Connection to: 1 -- -0.9044709
+Connection to: 2 -- -0.1807248
+Connection to: 3 -- -0.106328204
+Connection to: 4 -- 0.21407884
+Connection to: 5 -- 0.30574664
+Connection to: 6 -- -0.024593249
+Connection to: 7 -- 0.75061584
+Connection to: 8 -- 0.031593338
+Connection to: 9 -- -0.34495294
+Connection to: 10 -- -0.6949972
+Connection to: 11 -- -0.71947324
+Connection to: 12 -- 0.17634031
+Connection to: 13 -- 0.5486394
+Connection to: 14 -- 1.2577423
+Connection to: 15 -- -0.89721155
+Connection to: 16 -- 1.2219206
+Connection to: 17 -- -0.9799305
+Connection to: 18 -- -1.0063137
+Connection to: 19 -- -1.1327585
+Connection to: 20 -- -2.182015
+Connection to: 21 -- 0.27836722
+Connection to: 22 -- -1.4778509
+Connection to: 23 -- -0.6192391
+Connection to: 24 -- 0.60823655
+Connection to: 25 -- -1.5604007
+Connection to: 26 -- 0.21375117
+Node END
+Node: 5
+Connection to: 0 -- 0.17106113
+Connection to: 1 -- -1.2133322
+Connection to: 2 -- -0.24232972
+Connection to: 3 -- 0.7977482
+Connection to: 4 -- 1.2391062
+Connection to: 5 -- 0.10564318
+Connection to: 6 -- -1.1249336
+Connection to: 7 -- 1.4644078
+Connection to: 8 -- -1.2211696
+Connection to: 9 -- 0.14720148
+Connection to: 10 -- 0.8942722
+Connection to: 11 -- 0.4731469
+Connection to: 12 -- 0.0981825
+Connection to: 13 -- -0.3995976
+Connection to: 14 -- 0.3691813
+Connection to: 15 -- -0.35919237
+Connection to: 16 -- 0.50949633
+Connection to: 17 -- 1.2541004
+Connection to: 18 -- -0.6838461
+Connection to: 19 -- -0.72897255
+Connection to: 20 -- -0.21103995
+Connection to: 21 -- 0.339739
+Connection to: 22 -- 1.6714451
+Connection to: 23 -- 1.728542
+Connection to: 24 -- -1.010336
+Connection to: 25 -- 0.7564466
+Connection to: 26 -- -0.57227325
+Node END
+Node: 6
+Connection to: 0 -- -1.3609701
+Connection to: 1 -- 0.8868164
+Connection to: 2 -- -0.49073783
+Connection to: 3 -- -0.87561536
+Connection to: 4 -- -0.7196493
+Connection to: 5 -- 0.24897191
+Connection to: 6 -- 0.37840334
+Connection to: 7 -- 0.90041375
+Connection to: 8 -- -2.1410003
+Connection to: 9 -- 1.3932511
+Connection to: 10 -- 0.50159967
+Connection to: 11 -- 1.2363051
+Connection to: 12 -- 0.29930454
+Connection to: 13 -- -0.9223728
+Connection to: 14 -- -0.01735051
+Connection to: 15 -- -0.040643275
+Connection to: 16 -- -0.49866465
+Connection to: 17 -- -0.17705235
+Connection to: 18 -- 1.2827371
+Connection to: 19 -- 0.08501677
+Connection to: 20 -- -1.1326318
+Connection to: 21 -- -0.07272996
+Connection to: 22 -- -1.0692466
+Connection to: 23 -- 0.7978231
+Connection to: 24 -- -0.2686453
+Connection to: 25 -- -0.14159542
+Connection to: 26 -- -0.8746486
+Node END
+Node: 7
+Connection to: 0 -- 2.3057604
+Connection to: 1 -- 1.1118463
+Connection to: 2 -- -0.9564635
+Connection to: 3 -- 0.7665038
+Connection to: 4 -- 1.6050422
+Connection to: 5 -- 1.0525
+Connection to: 6 -- -1.8824679
+Connection to: 7 -- -0.7496152
+Connection to: 8 -- 0.32548922
+Connection to: 9 -- 2.2828584
+Connection to: 10 -- 0.094993636
+Connection to: 11 -- -0.70766854
+Connection to: 12 -- -1.0364441
+Connection to: 13 -- -0.7047292
+Connection to: 14 -- -0.15307005
+Connection to: 15 -- -1.4893614
+Connection to: 16 -- -0.1258254
+Connection to: 17 -- 0.25614694
+Connection to: 18 -- -0.770982
+Connection to: 19 -- 1.3832431
+Connection to: 20 -- -0.2718027
+Connection to: 21 -- -1.403733
+Connection to: 22 -- -1.2244232
+Connection to: 23 -- -2.4109786
+Connection to: 24 -- 1.1289076
+Connection to: 25 -- -1.1740528
+Connection to: 26 -- -0.47327507
+Node END
+Node: 8
+Connection to: 0 -- -0.36409307
+Connection to: 1 -- 1.6176476
+Connection to: 2 -- -0.7824316
+Connection to: 3 -- -1.9353708
+Connection to: 4 -- -0.72270584
+Connection to: 5 -- 1.7030162
+Connection to: 6 -- -1.1878554
+Connection to: 7 -- 0.6740048
+Connection to: 8 -- -0.23733765
+Connection to: 9 -- -2.133443
+Connection to: 10 -- 0.98214686
+Connection to: 11 -- -0.034622163
+Connection to: 12 -- 1.7262526
+Connection to: 13 -- -0.054761708
+Connection to: 14 -- 1.6046947
+Connection to: 15 -- -0.78570104
+Connection to: 16 -- 2.0385718
+Connection to: 17 -- 0.105712146
+Connection to: 18 -- -1.5232441
+Connection to: 19 -- -0.82947624
+Connection to: 20 -- 1.1010661
+Connection to: 21 -- 1.1104902
+Connection to: 22 -- -0.1980768
+Connection to: 23 -- 0.37891623
+Connection to: 24 -- 1.5510292
+Connection to: 25 -- 0.7726399
+Connection to: 26 -- 0.27174947
+Node END
+Node: 9
+Connection to: 0 -- -0.92334795
+Connection to: 1 -- 0.0681473
+Connection to: 2 -- 0.56184983
+Connection to: 3 -- -0.105145454
+Connection to: 4 -- 0.012148932
+Connection to: 5 -- 0.04905033
+Connection to: 6 -- -1.5449837
+Connection to: 7 -- 0.038238198
+Connection to: 8 -- 0.93167394
+Connection to: 9 -- -1.413596
+Connection to: 10 -- 0.46839884
+Connection to: 11 -- 0.9861232
+Connection to: 12 -- 0.99031615
+Connection to: 13 -- -0.8710699
+Connection to: 14 -- -1.0393572
+Connection to: 15 -- 0.79458857
+Connection to: 16 -- -0.5307244
+Connection to: 17 -- -0.77839386
+Connection to: 18 -- 0.033665627
+Connection to: 19 -- -0.18031245
+Connection to: 20 -- 0.79502773
+Connection to: 21 -- 1.1715521
+Connection to: 22 -- 1.0214268
+Connection to: 23 -- -0.032992482
+Connection to: 24 -- 0.491747
+Connection to: 25 -- 2.3208907
+Connection to: 26 -- 1.9093097
+Node END
+Node: 10
+Connection to: 0 -- 2.171029
+Connection to: 1 -- -0.3237195
+Connection to: 2 -- 1.7083
+Connection to: 3 -- 1.210007
+Connection to: 4 -- -0.92605937
+Connection to: 5 -- 1.092473
+Connection to: 6 -- 0.31992957
+Connection to: 7 -- 0.7746434
+Connection to: 8 -- 0.37342408
+Connection to: 9 -- 1.3080398
+Connection to: 10 -- -0.34663308
+Connection to: 11 -- -0.3872069
+Connection to: 12 -- 0.69462
+Connection to: 13 -- -2.1736548
+Connection to: 14 -- -1.1003636
+Connection to: 15 -- -0.590439
+Connection to: 16 -- -0.6322352
+Connection to: 17 -- 1.0739298
+Connection to: 18 -- -0.009600788
+Connection to: 19 -- 0.98066485
+Connection to: 20 -- 0.6371118
+Connection to: 21 -- -0.37709677
+Connection to: 22 -- -2.2846315
+Connection to: 23 -- -0.0973138
+Connection to: 24 -- -0.997386
+Connection to: 25 -- 0.06004423
+Connection to: 26 -- -0.946174
+Node END
+Node: 11
+Connection to: 0 -- -0.22188416
+Connection to: 1 -- -2.0057483
+Connection to: 2 -- 0.51988804
+Connection to: 3 -- -0.6597425
+Connection to: 4 -- -1.0605984
+Connection to: 5 -- 0.048998117
+Connection to: 6 -- 0.4570515
+Connection to: 7 -- -0.64197814
+Connection to: 8 -- -0.8800745
+Connection to: 9 -- 0.44992608
+Connection to: 10 -- -0.055304326
+Connection to: 11 -- 1.4588586
+Connection to: 12 -- -0.35145727
+Connection to: 13 -- -1.3837327
+Connection to: 14 -- 1.1727417
+Connection to: 15 -- -1.1825789
+Connection to: 16 -- 0.10882807
+Connection to: 17 -- -0.16481546
+Connection to: 18 -- -0.051607728
+Connection to: 19 -- 1.2733196
+Connection to: 20 -- -1.5090685
+Connection to: 21 -- -0.49295387
+Connection to: 22 -- 2.6522872
+Connection to: 23 -- 0.9666414
+Connection to: 24 -- 0.72095823
+Connection to: 25 -- 0.37430307
+Connection to: 26 -- -0.48977992
+Node END
+Node: 12
+Connection to: 0 -- 0.5364835
+Connection to: 1 -- -0.3943229
+Connection to: 2 -- -1.8994939
+Connection to: 3 -- 0.28500363
+Connection to: 4 -- -1.20276
+Connection to: 5 -- -0.59098196
+Connection to: 6 -- -0.40366504
+Connection to: 7 -- 0.2942241
+Connection to: 8 -- -0.983623
+Connection to: 9 -- -1.1059391
+Connection to: 10 -- 0.48802623
+Connection to: 11 -- 0.64083457
+Connection to: 12 -- 0.42932847
+Connection to: 13 -- 0.5278379
+Connection to: 14 -- -0.18959111
+Connection to: 15 -- 0.5484208
+Connection to: 16 -- 0.42291805
+Connection to: 17 -- 0.9514514
+Connection to: 18 -- -0.85689044
+Connection to: 19 -- 0.28610644
+Connection to: 20 -- -0.29676393
+Connection to: 21 -- -1.2316594
+Connection to: 22 -- -0.03612739
+Connection to: 23 -- 0.118839025
+Connection to: 24 -- -1.6736143
+Connection to: 25 -- -1.6369945
+Connection to: 26 -- -1.265522
+Node END
+Node: 13
+Connection to: 0 -- -0.90415096
+Connection to: 1 -- 0.30097756
+Connection to: 2 -- -0.44297722
+Connection to: 3 -- 0.10572222
+Connection to: 4 -- -1.6840025
+Connection to: 5 -- 0.67379236
+Connection to: 6 -- -1.2009034
+Connection to: 7 -- -0.29072982
+Connection to: 8 -- -1.0590935
+Connection to: 9 -- 0.3389068
+Connection to: 10 -- 1.3173572
+Connection to: 11 -- 0.9694946
+Connection to: 12 -- -0.5945953
+Connection to: 13 -- -0.95405924
+Connection to: 14 -- 0.33345914
+Connection to: 15 -- -1.25683
+Connection to: 16 -- 1.1398224
+Connection to: 17 -- -0.08068077
+Connection to: 18 -- -0.11531529
+Connection to: 19 -- 0.635203
+Connection to: 20 -- -0.7615769
+Connection to: 21 -- -0.44452748
+Connection to: 22 -- -0.8298898
+Connection to: 23 -- 0.39112654
+Connection to: 24 -- -0.9369134
+Connection to: 25 -- 0.017227337
+Connection to: 26 -- -0.6022053
+Node END
+Node: 14
+Connection to: 0 -- -0.5636867
+Connection to: 1 -- 0.38388005
+Connection to: 2 -- 0.9583758
+Connection to: 3 -- -2.1660125
+Connection to: 4 -- -0.08067178
+Connection to: 5 -- -1.3110188
+Connection to: 6 -- -1.2079185
+Connection to: 7 -- -0.734995
+Connection to: 8 -- 2.7673173
+Connection to: 9 -- -0.3213955
+Connection to: 10 -- -0.9032229
+Connection to: 11 -- -1.4070563
+Connection to: 12 -- 0.9040743
+Connection to: 13 -- 0.39780262
+Connection to: 14 -- -0.798363
+Connection to: 15 -- -0.27187
+Connection to: 16 -- -0.7616341
+Connection to: 17 -- 0.29199058
+Connection to: 18 -- -0.12089956
+Connection to: 19 -- -0.51190716
+Connection to: 20 -- 1.2513815
+Connection to: 21 -- -0.29603168
+Connection to: 22 -- 2.2069995
+Connection to: 23 -- -1.8582412
+Connection to: 24 -- -0.62187684
+Connection to: 25 -- 0.056109145
+Connection to: 26 -- -1.1967754
+Node END
+Node: 15
+Connection to: 0 -- -0.42560673
+Connection to: 1 -- -2.0602891
+Connection to: 2 -- 0.002452612
+Connection to: 3 -- 0.10885194
+Connection to: 4 -- -0.023647398
+Connection to: 5 -- 0.5199927
+Connection to: 6 -- -0.8091121
+Connection to: 7 -- 0.9058161
+Connection to: 8 -- -1.2199774
+Connection to: 9 -- -0.46538553
+Connection to: 10 -- 1.1784254
+Connection to: 11 -- -0.94089293
+Connection to: 12 -- -0.72263515
+Connection to: 13 -- -0.20421022
+Connection to: 14 -- 1.1972371
+Connection to: 15 -- 1.8158127
+Connection to: 16 -- -0.03398949
+Connection to: 17 -- -0.17017248
+Connection to: 18 -- 0.50148404
+Connection to: 19 -- 0.7156912
+Connection to: 20 -- 0.39199588
+Connection to: 21 -- 1.2261807
+Connection to: 22 -- 0.9438871
+Connection to: 23 -- -0.51848304
+Connection to: 24 -- -0.47838995
+Connection to: 25 -- -2.5059574
+Connection to: 26 -- -0.61086255
+Node END
+Node: 16
+Connection to: 0 -- -0.2875107
+Connection to: 1 -- -0.3869521
+Connection to: 2 -- 0.5877025
+Connection to: 3 -- -0.8287102
+Connection to: 4 -- 0.2487643
+Connection to: 5 -- 0.13090864
+Connection to: 6 -- 1.2862936
+Connection to: 7 -- -2.4755876
+Connection to: 8 -- 0.13412806
+Connection to: 9 -- -0.24304827
+Connection to: 10 -- 0.7855618
+Connection to: 11 -- -0.4296119
+Connection to: 12 -- -0.88477623
+Connection to: 13 -- 0.25555608
+Connection to: 14 -- -0.07101865
+Connection to: 15 -- -2.2316322
+Connection to: 16 -- 0.40448254
+Connection to: 17 -- 1.6738449
+Connection to: 18 -- -0.22327763
+Connection to: 19 -- -1.313199
+Connection to: 20 -- -0.54861236
+Connection to: 21 -- 1.3772749
+Connection to: 22 -- 0.4820316
+Connection to: 23 -- -0.39729792
+Connection to: 24 -- 0.42965332
+Connection to: 25 -- 0.25872537
+Connection to: 26 -- -0.10547683
+Node END
+Node: 17
+Connection to: 0 -- 0.81933916
+Connection to: 1 -- -0.23275259
+Connection to: 2 -- 1.1105287
+Connection to: 3 -- 0.17712691
+Connection to: 4 -- -0.5231043
+Connection to: 5 -- -0.51204515
+Connection to: 6 -- 1.4358077
+Connection to: 7 -- -0.24463595
+Connection to: 8 -- 0.9447533
+Connection to: 9 -- 0.8704411
+Connection to: 10 -- 0.8594259
+Connection to: 11 -- 0.92805386
+Connection to: 12 -- 0.575989
+Connection to: 13 -- 0.18430686
+Connection to: 14 -- 0.5450835
+Connection to: 15 -- -1.0613573
+Connection to: 16 -- 1.3101208
+Connection to: 17 -- 0.97023916
+Connection to: 18 -- -0.63059026
+Connection to: 19 -- -0.5856186
+Connection to: 20 -- -0.5873964
+Connection to: 21 -- -0.8913535
+Connection to: 22 -- -0.53316975
+Connection to: 23 -- -1.5834495
+Connection to: 24 -- -0.53783524
+Connection to: 25 -- -0.10963024
+Connection to: 26 -- 0.7650626
+Node END
+Node: 18
+Connection to: 0 -- 0.8723638
+Connection to: 1 -- 0.18086073
+Connection to: 2 -- 0.8932607
+Connection to: 3 -- 1.0198776
+Connection to: 4 -- 0.05531676
+Connection to: 5 -- -0.3380509
+Connection to: 6 -- 0.8507408
+Connection to: 7 -- 0.13938126
+Connection to: 8 -- 0.0399974
+Connection to: 9 -- -2.0475848
+Connection to: 10 -- -0.46518618
+Connection to: 11 -- 0.9052378
+Connection to: 12 -- -0.32845736
+Connection to: 13 -- 2.2759817
+Connection to: 14 -- 1.4649397
+Connection to: 15 -- 0.45956507
+Connection to: 16 -- 0.39714953
+Connection to: 17 -- 0.6099911
+Connection to: 18 -- -0.6114814
+Connection to: 19 -- 1.2862324
+Connection to: 20 -- 0.2630727
+Connection to: 21 -- -0.90961635
+Connection to: 22 -- -1.0406898
+Connection to: 23 -- -0.24246904
+Connection to: 24 -- -1.1991935
+Connection to: 25 -- 0.44980356
+Connection to: 26 -- -0.49569464
+Node END
+Node: 19
+Connection to: 0 -- 0.28501463
+Connection to: 1 -- 1.2047961
+Connection to: 2 -- 0.15724799
+Connection to: 3 -- 0.7345966
+Connection to: 4 -- -0.18392628
+Connection to: 5 -- 1.2015885
+Connection to: 6 -- 0.07559827
+Connection to: 7 -- -0.54437184
+Connection to: 8 -- 0.835729
+Connection to: 9 -- -0.13504873
+Connection to: 10 -- -0.5821177
+Connection to: 11 -- -0.79025674
+Connection to: 12 -- 0.29206884
+Connection to: 13 -- 1.4195051
+Connection to: 14 -- 0.25042433
+Connection to: 15 -- -1.1670493
+Connection to: 16 -- -0.6124996
+Connection to: 17 -- 0.96698964
+Connection to: 18 -- -2.226819
+Connection to: 19 -- 0.25117496
+Connection to: 20 -- -1.2707148
+Connection to: 21 -- 1.163427
+Connection to: 22 -- -1.2409633
+Connection to: 23 -- 1.9258522
+Connection to: 24 -- -0.7387936
+Connection to: 25 -- 0.69194436
+Connection to: 26 -- -0.65295386
+Node END
+Node: 20
+Connection to: 0 -- -0.46426088
+Connection to: 1 -- 2.0761278
+Connection to: 2 -- 1.233999
+Connection to: 3 -- 1.5072321
+Connection to: 4 -- -0.17974046
+Connection to: 5 -- 1.5294284
+Connection to: 6 -- 0.82338727
+Connection to: 7 -- 0.18544587
+Connection to: 8 -- -1.5693921
+Connection to: 9 -- -1.686257
+Connection to: 10 -- 1.2358053
+Connection to: 11 -- 0.053748563
+Connection to: 12 -- -0.3919993
+Connection to: 13 -- -0.24618053
+Connection to: 14 -- 0.40489987
+Connection to: 15 -- 0.031184435
+Connection to: 16 -- 0.214198
+Connection to: 17 -- -0.41906115
+Connection to: 18 -- -1.6473054
+Connection to: 19 -- 0.63217974
+Connection to: 20 -- 0.45805308
+Connection to: 21 -- -1.5429547
+Connection to: 22 -- -1.8974512
+Connection to: 23 -- -0.3907519
+Connection to: 24 -- -1.4666477
+Connection to: 25 -- -0.15177564
+Connection to: 26 -- -0.87237704
+Node END
+Node: 21
+Connection to: 0 -- 0.31815678
+Connection to: 1 -- -0.4703086
+Connection to: 2 -- 0.23901019
+Connection to: 3 -- 0.26896706
+Connection to: 4 -- -0.31703198
+Connection to: 5 -- -0.26450044
+Connection to: 6 -- -0.25396302
+Connection to: 7 -- 1.3171229
+Connection to: 8 -- 1.0247153
+Connection to: 9 -- -0.26411808
+Connection to: 10 -- 0.20228064
+Connection to: 11 -- -0.87884164
+Connection to: 12 -- -1.9841198
+Connection to: 13 -- -0.23428233
+Connection to: 14 -- -0.51494366
+Connection to: 15 -- -1.3136842
+Connection to: 16 -- -0.27560815
+Connection to: 17 -- 0.24056405
+Connection to: 18 -- -1.5613843
+Connection to: 19 -- 0.118083745
+Connection to: 20 -- 1.1411037
+Connection to: 21 -- 1.211155
+Connection to: 22 -- 1.1631737
+Connection to: 23 -- -0.8492626
+Connection to: 24 -- 0.7301103
+Connection to: 25 -- 0.89271665
+Connection to: 26 -- 1.8775369
+Node END
+Node: 22
+Connection to: 0 -- 1.0401827
+Connection to: 1 -- 0.2367405
+Connection to: 2 -- -1.1821649
+Connection to: 3 -- 1.1251987
+Connection to: 4 -- -0.18158428
+Connection to: 5 -- -0.18166086
+Connection to: 6 -- 0.41996023
+Connection to: 7 -- -0.5504812
+Connection to: 8 -- 0.48324344
+Connection to: 9 -- -1.8079976
+Connection to: 10 -- 0.22821233
+Connection to: 11 -- -0.5018548
+Connection to: 12 -- -2.3654642
+Connection to: 13 -- 1.3504654
+Connection to: 14 -- 0.5224812
+Connection to: 15 -- 0.3170636
+Connection to: 16 -- -0.79757977
+Connection to: 17 -- 0.017131835
+Connection to: 18 -- -0.2755664
+Connection to: 19 -- -0.94102955
+Connection to: 20 -- -0.72408116
+Connection to: 21 -- -0.768152
+Connection to: 22 -- 1.5156379
+Connection to: 23 -- 0.38107142
+Connection to: 24 -- 0.79078674
+Connection to: 25 -- -0.53114164
+Connection to: 26 -- -0.06071873
+Node END
+Node: 23
+Connection to: 0 -- -0.58046025
+Connection to: 1 -- -1.7224333
+Connection to: 2 -- -0.8539802
+Connection to: 3 -- -1.1070976
+Connection to: 4 -- 0.38739142
+Connection to: 5 -- 0.81032264
+Connection to: 6 -- 0.4919524
+Connection to: 7 -- 0.4651312
+Connection to: 8 -- -1.0511997
+Connection to: 9 -- 0.2678014
+Connection to: 10 -- -0.7026254
+Connection to: 11 -- 0.39532742
+Connection to: 12 -- 0.08549835
+Connection to: 13 -- -1.0505469
+Connection to: 14 -- -0.1792803
+Connection to: 15 -- -0.17771938
+Connection to: 16 -- -1.4201427
+Connection to: 17 -- 1.1331905
+Connection to: 18 -- 0.68658495
+Connection to: 19 -- -1.4806018
+Connection to: 20 -- -0.1386484
+Connection to: 21 -- 0.35477242
+Connection to: 22 -- -1.7233044
+Connection to: 23 -- 0.3434918
+Connection to: 24 -- -1.3933543
+Connection to: 25 -- 0.69973946
+Connection to: 26 -- 0.17262146
+Node END
+Node: 24
+Connection to: 0 -- -0.08518684
+Connection to: 1 -- 0.13139445
+Connection to: 2 -- -0.738605
+Connection to: 3 -- 1.8918718
+Connection to: 4 -- 0.55227935
+Connection to: 5 -- 0.37247103
+Connection to: 6 -- 0.34485993
+Connection to: 7 -- -0.8260082
+Connection to: 8 -- 0.18036982
+Connection to: 9 -- 0.61761665
+Connection to: 10 -- 2.187511
+Connection to: 11 -- -0.40597972
+Connection to: 12 -- 0.053003624
+Connection to: 13 -- -0.34219134
+Connection to: 14 -- 0.2688404
+Connection to: 15 -- 0.6469339
+Connection to: 16 -- -1.6304725
+Connection to: 17 -- 0.5188304
+Connection to: 18 -- 1.3035468
+Connection to: 19 -- 1.0967447
+Connection to: 20 -- -2.7027338
+Connection to: 21 -- -0.1275892
+Connection to: 22 -- 0.76351106
+Connection to: 23 -- -0.946437
+Connection to: 24 -- -1.257574
+Connection to: 25 -- 0.90290725
+Connection to: 26 -- 0.859632
+Node END
+Node: 25
+Connection to: 0 -- -0.5937028
+Connection to: 1 -- 0.18547681
+Connection to: 2 -- 1.7069753
+Connection to: 3 -- -0.21185789
+Connection to: 4 -- 1.3841791
+Connection to: 5 -- -1.2072446
+Connection to: 6 -- 1.2900687
+Connection to: 7 -- -0.3165782
+Connection to: 8 -- 1.2530619
+Connection to: 9 -- -0.613485
+Connection to: 10 -- -0.6405676
+Connection to: 11 -- 0.42657903
+Connection to: 12 -- 0.46348837
+Connection to: 13 -- 0.29834968
+Connection to: 14 -- -1.0829971
+Connection to: 15 -- 0.847077
+Connection to: 16 -- 1.6811798
+Connection to: 17 -- -0.042267665
+Connection to: 18 -- 1.567871
+Connection to: 19 -- 0.6321635
+Connection to: 20 -- -0.09176929
+Connection to: 21 -- 0.2743845
+Connection to: 22 -- 0.048145622
+Connection to: 23 -- -0.57685924
+Connection to: 24 -- -0.8264295
+Connection to: 25 -- 0.057929665
+Connection to: 26 -- 0.3379418
+Node END
+Node: 26
+Connection to: 0 -- -1.3867221
+Connection to: 1 -- 0.036017463
+Connection to: 2 -- 1.1954783
+Connection to: 3 -- -0.4237148
+Connection to: 4 -- 0.37120828
+Connection to: 5 -- -0.2925406
+Connection to: 6 -- -1.0190477
+Connection to: 7 -- -0.6628648
+Connection to: 8 -- -0.5687833
+Connection to: 9 -- 0.05967079
+Connection to: 10 -- 0.046743676
+Connection to: 11 -- 0.98906887
+Connection to: 12 -- -0.10772716
+Connection to: 13 -- 0.3350928
+Connection to: 14 -- 0.9511957
+Connection to: 15 -- 1.6513774
+Connection to: 16 -- 1.2802793
+Connection to: 17 -- -0.8672483
+Connection to: 18 -- 0.3887675
+Connection to: 19 -- -0.24614999
+Connection to: 20 -- -0.48428556
+Connection to: 21 -- -0.33911943
+Connection to: 22 -- 0.7890229
+Connection to: 23 -- -0.7375101
+Connection to: 24 -- 0.9466094
+Connection to: 25 -- 0.3493939
+Connection to: 26 -- 1.0176381
+Node END
+Node: 27
+Connection to: 0 -- -0.18705416
+Connection to: 1 -- 0.13626117
+Connection to: 2 -- -0.6147417
+Connection to: 3 -- -0.64291334
+Connection to: 4 -- 1.1223081
+Connection to: 5 -- -0.9180434
+Connection to: 6 -- -0.9942651
+Connection to: 7 -- -0.44992125
+Connection to: 8 -- -0.5722908
+Connection to: 9 -- -1.1323344
+Connection to: 10 -- 1.7185974
+Connection to: 11 -- -1.3328959
+Connection to: 12 -- -1.1041335
+Connection to: 13 -- 1.4501036
+Connection to: 14 -- 0.936501
+Connection to: 15 -- 0.73720706
+Connection to: 16 -- -1.6804787
+Connection to: 17 -- -0.013690025
+Connection to: 18 -- -0.7602725
+Connection to: 19 -- -0.7436305
+Connection to: 20 -- 0.2928814
+Connection to: 21 -- -0.22615677
+Connection to: 22 -- -0.079774916
+Connection to: 23 -- 0.03037186
+Connection to: 24 -- -0.16787152
+Connection to: 25 -- 3.7699056
+Connection to: 26 -- 0.37582925
+Node END
+Node: 28
+Connection to: 0 -- 0.103325814
+Connection to: 1 -- -0.2751867
+Connection to: 2 -- 1.1129081
+Connection to: 3 -- -0.023562074
+Connection to: 4 -- 0.050069258
+Connection to: 5 -- 1.7017528
+Connection to: 6 -- 0.50256574
+Connection to: 7 -- 0.66305465
+Connection to: 8 -- -0.16845644
+Connection to: 9 -- -0.44672236
+Connection to: 10 -- -0.5785315
+Connection to: 11 -- 0.24112698
+Connection to: 12 -- 0.026618049
+Connection to: 13 -- 1.0520606
+Connection to: 14 -- -0.9383614
+Connection to: 15 -- 0.7527124
+Connection to: 16 -- 1.5568734
+Connection to: 17 -- 0.094975516
+Connection to: 18 -- -0.87662876
+Connection to: 19 -- 0.22139367
+Connection to: 20 -- 0.6024272
+Connection to: 21 -- -0.14620131
+Connection to: 22 -- -0.23644751
+Connection to: 23 -- 1.1692494
+Connection to: 24 -- 2.3560102
+Connection to: 25 -- 1.3759404
+Connection to: 26 -- -0.33050162
+Node END
+Node: 29
+Connection to: 0 -- -0.7867577
+Connection to: 1 -- 1.1804483
+Connection to: 2 -- -0.42321208
+Connection to: 3 -- -0.037283033
+Connection to: 4 -- -0.11630554
+Connection to: 5 -- -0.3882086
+Connection to: 6 -- 0.11363727
+Connection to: 7 -- -2.555446
+Connection to: 8 -- -0.5182372
+Connection to: 9 -- 0.650169
+Connection to: 10 -- 0.38713863
+Connection to: 11 -- -0.7470416
+Connection to: 12 -- 0.75633776
+Connection to: 13 -- 0.57090986
+Connection to: 14 -- 1.7549534
+Connection to: 15 -- -0.36651835
+Connection to: 16 -- 0.10378364
+Connection to: 17 -- -0.0755398
+Connection to: 18 -- -0.03894995
+Connection to: 19 -- -0.9497428
+Connection to: 20 -- 0.8900205
+Connection to: 21 -- -0.40022987
+Connection to: 22 -- -1.0638245
+Connection to: 23 -- -0.22711645
+Connection to: 24 -- -0.53188276
+Connection to: 25 -- -0.8543527
+Connection to: 26 -- -0.21557723
+Node END
+Node: 30
+Connection to: 0 -- 0.57841074
+Connection to: 1 -- -0.13311206
+Connection to: 2 -- 0.67398417
+Connection to: 3 -- 0.695394
+Connection to: 4 -- -2.2347388
+Connection to: 5 -- 0.32036796
+Connection to: 6 -- -0.8458848
+Connection to: 7 -- -0.963215
+Connection to: 8 -- 0.53743005
+Connection to: 9 -- 0.6409079
+Connection to: 10 -- -1.4246134
+Connection to: 11 -- -0.80984247
+Connection to: 12 -- 0.2755001
+Connection to: 13 -- 0.7820302
+Connection to: 14 -- -1.6446315
+Connection to: 15 -- 0.30738077
+Connection to: 16 -- -2.19388
+Connection to: 17 -- 0.7751342
+Connection to: 18 -- -1.9783905
+Connection to: 19 -- -0.9751351
+Connection to: 20 -- -1.5043167
+Connection to: 21 -- 0.2191062
+Connection to: 22 -- -0.7096511
+Connection to: 23 -- 0.46630612
+Connection to: 24 -- -1.7741373
+Connection to: 25 -- 0.5910089
+Connection to: 26 -- -0.98342824
+Node END
+Node: 31
+Connection to: 0 -- -0.15488687
+Connection to: 1 -- 2.2940426
+Connection to: 2 -- 2.7027216
+Connection to: 3 -- 0.3909029
+Connection to: 4 -- 0.56872725
+Connection to: 5 -- 0.61175656
+Connection to: 6 -- 0.50922704
+Connection to: 7 -- 0.09474817
+Connection to: 8 -- -0.40352678
+Connection to: 9 -- -0.281761
+Connection to: 10 -- 1.0603969
+Connection to: 11 -- -0.712833
+Connection to: 12 -- 0.3352867
+Connection to: 13 -- -2.0577703
+Connection to: 14 -- 0.29054716
+Connection to: 15 -- -0.6954895
+Connection to: 16 -- -1.5914081
+Connection to: 17 -- -0.80475307
+Connection to: 18 -- 0.3283777
+Connection to: 19 -- -0.2905325
+Connection to: 20 -- 0.34963885
+Connection to: 21 -- 0.553758
+Connection to: 22 -- 0.003608942
+Connection to: 23 -- 0.8293848
+Connection to: 24 -- -0.098593175
+Connection to: 25 -- -1.7814038
+Connection to: 26 -- 0.555585
+Node END
+Node: 32
+Connection to: 0 -- -0.7037629
+Connection to: 1 -- -1.1503466
+Connection to: 2 -- -0.49889344
+Connection to: 3 -- 1.5183237
+Connection to: 4 -- -0.10959977
+Connection to: 5 -- 0.0054941177
+Connection to: 6 -- 0.235414
+Connection to: 7 -- -1.6821004
+Connection to: 8 -- -1.7688271
+Connection to: 9 -- -2.2459893
+Connection to: 10 -- 1.2597369
+Connection to: 11 -- 0.10955027
+Connection to: 12 -- 0.29718813
+Connection to: 13 -- 0.62920374
+Connection to: 14 -- -0.86979866
+Connection to: 15 -- -0.90258414
+Connection to: 16 -- -0.41578844
+Connection to: 17 -- -1.0006921
+Connection to: 18 -- -0.28335753
+Connection to: 19 -- 3.865418
+Connection to: 20 -- 0.21116886
+Connection to: 21 -- -0.22523332
+Connection to: 22 -- -0.09264754
+Connection to: 23 -- -0.06337404
+Connection to: 24 -- -1.0610474
+Connection to: 25 -- 1.3494084
+Connection to: 26 -- 0.81337607
+Node END
+Node: 33
+Connection to: 0 -- -1.0724268
+Connection to: 1 -- 0.7222328
+Connection to: 2 -- 0.0750335
+Connection to: 3 -- 1.321916
+Connection to: 4 -- -1.0522916
+Connection to: 5 -- -0.18621068
+Connection to: 6 -- 0.01878582
+Connection to: 7 -- 1.1737872
+Connection to: 8 -- -0.3695703
+Connection to: 9 -- -0.276566
+Connection to: 10 -- 2.260365
+Connection to: 11 -- -1.4786334
+Connection to: 12 -- 0.032937124
+Connection to: 13 -- -0.776099
+Connection to: 14 -- -1.1828618
+Connection to: 15 -- -0.8780236
+Connection to: 16 -- -0.6012331
+Connection to: 17 -- 0.09093787
+Connection to: 18 -- -0.9724554
+Connection to: 19 -- 0.4377235
+Connection to: 20 -- 0.46803
+Connection to: 21 -- -0.65809286
+Connection to: 22 -- 0.7046306
+Connection to: 23 -- -1.5444081
+Connection to: 24 -- -1.0454011
+Connection to: 25 -- -0.43634045
+Connection to: 26 -- -1.0920614
+Node END
+Node: 34
+Connection to: 0 -- -0.019094452
+Connection to: 1 -- -0.5157869
+Connection to: 2 -- -1.5156958
+Connection to: 3 -- -0.9111346
+Connection to: 4 -- 0.09079449
+Connection to: 5 -- -0.5491214
+Connection to: 6 -- 0.821861
+Connection to: 7 -- 0.007540658
+Connection to: 8 -- -0.17873903
+Connection to: 9 -- -0.35185075
+Connection to: 10 -- 1.4313917
+Connection to: 11 -- 0.084714666
+Connection to: 12 -- 0.5774882
+Connection to: 13 -- 1.1221097
+Connection to: 14 -- -0.1531926
+Connection to: 15 -- -0.22640647
+Connection to: 16 -- 0.23780733
+Connection to: 17 -- 0.083942115
+Connection to: 18 -- -0.60868317
+Connection to: 19 -- -0.5268594
+Connection to: 20 -- 0.20145708
+Connection to: 21 -- -0.38675556
+Connection to: 22 -- 0.8451005
+Connection to: 23 -- -0.26953575
+Connection to: 24 -- -1.538025
+Connection to: 25 -- 0.17004111
+Connection to: 26 -- 0.7957409
+Node END
+Node: 35
+Connection to: 0 -- -0.68170834
+Connection to: 1 -- -1.4039836
+Connection to: 2 -- -0.17759
+Connection to: 3 -- -1.1854683
+Connection to: 4 -- -0.7723129
+Connection to: 5 -- 1.1168114
+Connection to: 6 -- -0.3153581
+Connection to: 7 -- 0.18856695
+Connection to: 8 -- -0.5727701
+Connection to: 9 -- -1.6642187
+Connection to: 10 -- -0.3488914
+Connection to: 11 -- -0.15372553
+Connection to: 12 -- -0.43668422
+Connection to: 13 -- 0.16701683
+Connection to: 14 -- 0.76293457
+Connection to: 15 -- -0.25018612
+Connection to: 16 -- -0.54496574
+Connection to: 17 -- 0.5868008
+Connection to: 18 -- 0.37185845
+Connection to: 19 -- -0.4521853
+Connection to: 20 -- 0.5121038
+Connection to: 21 -- -0.2845123
+Connection to: 22 -- 0.11919734
+Connection to: 23 -- -0.25328684
+Connection to: 24 -- -2.1408887
+Connection to: 25 -- -0.22773093
+Connection to: 26 -- 0.8194815
+Node END
+Node: 36
+Connection to: 0 -- -0.7618052
+Connection to: 1 -- 1.4111094
+Connection to: 2 -- -0.56556004
+Connection to: 3 -- -0.25962073
+Connection to: 4 -- 1.1393207
+Connection to: 5 -- 1.0131831
+Connection to: 6 -- -1.8556567
+Connection to: 7 -- 0.62006795
+Connection to: 8 -- -0.85372007
+Connection to: 9 -- 0.30133846
+Connection to: 10 -- 0.4762077
+Connection to: 11 -- 0.28458863
+Connection to: 12 -- 2.603226
+Connection to: 13 -- -0.79773283
+Connection to: 14 -- 0.76673186
+Connection to: 15 -- -0.5374987
+Connection to: 16 -- 0.43160066
+Connection to: 17 -- -0.77982664
+Connection to: 18 -- -0.33493388
+Connection to: 19 -- 1.1120669
+Connection to: 20 -- -0.15774527
+Connection to: 21 -- 0.7424576
+Connection to: 22 -- -0.6814389
+Connection to: 23 -- 0.7392055
+Connection to: 24 -- -0.34902975
+Connection to: 25 -- -1.2758368
+Connection to: 26 -- 0.666385
+Node END
+Node: 37
+Connection to: 0 -- -0.28598982
+Connection to: 1 -- 0.3822985
+Connection to: 2 -- -1.7421808
+Connection to: 3 -- -1.3959233
+Connection to: 4 -- -0.64742965
+Connection to: 5 -- 0.12637183
+Connection to: 6 -- -1.532016
+Connection to: 7 -- 0.76872325
+Connection to: 8 -- -0.36953837
+Connection to: 9 -- 2.612025
+Connection to: 10 -- 2.005471
+Connection to: 11 -- 1.3753846
+Connection to: 12 -- 0.3732964
+Connection to: 13 -- 0.41627255
+Connection to: 14 -- 1.6423473
+Connection to: 15 -- 0.771906
+Connection to: 16 -- -1.5044739
+Connection to: 17 -- 0.9232558
+Connection to: 18 -- -0.80945134
+Connection to: 19 -- -1.196577
+Connection to: 20 -- -1.8403311
+Connection to: 21 -- 0.9920019
+Connection to: 22 -- 0.21775281
+Connection to: 23 -- -0.54594314
+Connection to: 24 -- -1.1430376
+Connection to: 25 -- -0.9474845
+Connection to: 26 -- 0.26147255
+Node END
+Node: 38
+Connection to: 0 -- -0.70628715
+Connection to: 1 -- 2.2259085
+Connection to: 2 -- 1.6578747
+Connection to: 3 -- -0.6678666
+Connection to: 4 -- -1.0479914
+Connection to: 5 -- 0.2803349
+Connection to: 6 -- 1.0412765
+Connection to: 7 -- 0.30314544
+Connection to: 8 -- 1.5651569
+Connection to: 9 -- 0.35120627
+Connection to: 10 -- -1.2612138
+Connection to: 11 -- 0.46641645
+Connection to: 12 -- -1.7997767
+Connection to: 13 -- -0.1552164
+Connection to: 14 -- 0.40883943
+Connection to: 15 -- -1.3522303
+Connection to: 16 -- -0.91799426
+Connection to: 17 -- -0.39073563
+Connection to: 18 -- -0.39391473
+Connection to: 19 -- -0.6792916
+Connection to: 20 -- 1.5155239
+Connection to: 21 -- -0.7308066
+Connection to: 22 -- 0.14266124
+Connection to: 23 -- -0.02619259
+Connection to: 24 -- -0.10336697
+Connection to: 25 -- -0.22263505
+Connection to: 26 -- -0.08669646
+Node END
+Node: 39
+Connection to: 0 -- -0.778
+Connection to: 1 -- 0.53159595
+Connection to: 2 -- 0.92900336
+Connection to: 3 -- 0.49198112
+Connection to: 4 -- -0.20704928
+Connection to: 5 -- -0.3303392
+Connection to: 6 -- 0.6555749
+Connection to: 7 -- -0.16222233
+Connection to: 8 -- 2.2845001
+Connection to: 9 -- -1.1088789
+Connection to: 10 -- -0.8481939
+Connection to: 11 -- 0.50268745
+Connection to: 12 -- -1.424672
+Connection to: 13 -- -0.8712895
+Connection to: 14 -- 0.5669427
+Connection to: 15 -- 0.4601471
+Connection to: 16 -- 0.41393712
+Connection to: 17 -- 0.85017645
+Connection to: 18 -- -0.9640361
+Connection to: 19 -- -1.2887203
+Connection to: 20 -- -1.4674401
+Connection to: 21 -- 0.86316454
+Connection to: 22 -- 0.8526472
+Connection to: 23 -- 0.5865661
+Connection to: 24 -- -0.020168811
+Connection to: 25 -- -2.0416253
+Connection to: 26 -- 0.7797842
+Node END
+Node: 40
+Connection to: 0 -- 1.292514
+Connection to: 1 -- 0.4775686
+Connection to: 2 -- -1.3640015
+Connection to: 3 -- -1.5307819
+Connection to: 4 -- -0.31965482
+Connection to: 5 -- 1.1386956
+Connection to: 6 -- -1.1835715
+Connection to: 7 -- -0.33883125
+Connection to: 8 -- 2.4028115
+Connection to: 9 -- 0.13538137
+Connection to: 10 -- 0.98628664
+Connection to: 11 -- -0.32370305
+Connection to: 12 -- 0.05357124
+Connection to: 13 -- 1.2052764
+Connection to: 14 -- -0.8369844
+Connection to: 15 -- -1.987085
+Connection to: 16 -- -1.5308852
+Connection to: 17 -- 0.7229655
+Connection to: 18 -- 0.37243757
+Connection to: 19 -- -0.37658828
+Connection to: 20 -- 0.22138917
+Connection to: 21 -- 0.1401299
+Connection to: 22 -- -0.34096488
+Connection to: 23 -- 0.09256515
+Connection to: 24 -- 0.9040669
+Connection to: 25 -- -0.96788824
+Connection to: 26 -- -0.5257124
+Node END
+Node: 41
+Connection to: 0 -- -0.14362061
+Connection to: 1 -- 1.432391
+Connection to: 2 -- -0.3684908
+Connection to: 3 -- -0.48986012
+Connection to: 4 -- -1.7073638
+Connection to: 5 -- -0.15510944
+Connection to: 6 -- 0.20430309
+Connection to: 7 -- 2.0644355
+Connection to: 8 -- -0.71882534
+Connection to: 9 -- -1.3952775
+Connection to: 10 -- -0.6991893
+Connection to: 11 -- 1.2020978
+Connection to: 12 -- 0.120720774
+Connection to: 13 -- 1.4229928
+Connection to: 14 -- -0.035982363
+Connection to: 15 -- -0.4369825
+Connection to: 16 -- -1.0132923
+Connection to: 17 -- -1.1518759
+Connection to: 18 -- -0.9634197
+Connection to: 19 -- -0.31719843
+Connection to: 20 -- -0.4557426
+Connection to: 21 -- -1.2214801
+Connection to: 22 -- 0.2869178
+Connection to: 23 -- -0.43750924
+Connection to: 24 -- 0.38612834
+Connection to: 25 -- 0.09364015
+Connection to: 26 -- -0.32491988
+Node END
+Node: 42
+Connection to: 0 -- 0.640079
+Connection to: 1 -- -0.6523962
+Connection to: 2 -- -1.0503126
+Connection to: 3 -- 0.23713496
+Connection to: 4 -- -2.175887
+Connection to: 5 -- -0.5321915
+Connection to: 6 -- 0.22361329
+Connection to: 7 -- -1.4330091
+Connection to: 8 -- -1.5468975
+Connection to: 9 -- 0.61500615
+Connection to: 10 -- -1.0799047
+Connection to: 11 -- -0.6338581
+Connection to: 12 -- -0.23761958
+Connection to: 13 -- -1.1012461
+Connection to: 14 -- -0.66856897
+Connection to: 15 -- 0.31940344
+Connection to: 16 -- 1.3617067
+Connection to: 17 -- -1.319095
+Connection to: 18 -- 0.7854357
+Connection to: 19 -- -0.47985214
+Connection to: 20 -- -0.21448016
+Connection to: 21 -- -0.29663727
+Connection to: 22 -- 0.52824926
+Connection to: 23 -- 2.6414773
+Connection to: 24 -- 1.3531839
+Connection to: 25 -- 0.69518864
+Connection to: 26 -- -0.17785974
+Node END
+Node: 43
+Connection to: 0 -- -1.6384434
+Connection to: 1 -- -0.07398233
+Connection to: 2 -- -0.79013884
+Connection to: 3 -- -0.675859
+Connection to: 4 -- 0.5709325
+Connection to: 5 -- 0.34048268
+Connection to: 6 -- -0.70485055
+Connection to: 7 -- 0.6705283
+Connection to: 8 -- -1.8122069
+Connection to: 9 -- 2.5058239
+Connection to: 10 -- -0.8386805
+Connection to: 11 -- -1.2600288
+Connection to: 12 -- 1.2668536
+Connection to: 13 -- 0.16098481
+Connection to: 14 -- 0.41204566
+Connection to: 15 -- 0.19714177
+Connection to: 16 -- 0.9860364
+Connection to: 17 -- -1.0806136
+Connection to: 18 -- -0.9623538
+Connection to: 19 -- 0.6219102
+Connection to: 20 -- -1.4608845
+Connection to: 21 -- -0.5606053
+Connection to: 22 -- -0.3907181
+Connection to: 23 -- -1.3415259
+Connection to: 24 -- -0.93399966
+Connection to: 25 -- 0.37093133
+Connection to: 26 -- 1.9211215
+Node END
+Node: 44
+Connection to: 0 -- -0.14079815
+Connection to: 1 -- 0.46555212
+Connection to: 2 -- 1.1813674
+Connection to: 3 -- -0.3216066
+Connection to: 4 -- -0.4788396
+Connection to: 5 -- -0.7661774
+Connection to: 6 -- -0.2681458
+Connection to: 7 -- -2.1720366
+Connection to: 8 -- 1.3783298
+Connection to: 9 -- 1.2817543
+Connection to: 10 -- -0.37268782
+Connection to: 11 -- -0.45647198
+Connection to: 12 -- 0.30805844
+Connection to: 13 -- 0.47165152
+Connection to: 14 -- 0.74708295
+Connection to: 15 -- 0.866923
+Connection to: 16 -- -0.7736274
+Connection to: 17 -- -0.37102115
+Connection to: 18 -- -0.5583101
+Connection to: 19 -- -0.5384817
+Connection to: 20 -- 0.14653337
+Connection to: 21 -- 0.2534624
+Connection to: 22 -- 0.42093602
+Connection to: 23 -- 0.1757113
+Connection to: 24 -- -0.3158605
+Connection to: 25 -- -0.7804556
+Connection to: 26 -- -0.9049251
+Node END
+Node: 45
+Connection to: 0 -- 0.7195643
+Connection to: 1 -- 0.75317097
+Connection to: 2 -- -0.3044853
+Connection to: 3 -- 0.48632738
+Connection to: 4 -- -1.4358667
+Connection to: 5 -- 0.009768248
+Connection to: 6 -- 0.43988773
+Connection to: 7 -- -1.452937
+Connection to: 8 -- -1.3384502
+Connection to: 9 -- -1.8389593
+Connection to: 10 -- -1.1213909
+Connection to: 11 -- 0.1919885
+Connection to: 12 -- 1.5222994
+Connection to: 13 -- 0.98904574
+Connection to: 14 -- 0.49674156
+Connection to: 15 -- -0.64465606
+Connection to: 16 -- 1.0198449
+Connection to: 17 -- -1.8465561
+Connection to: 18 -- 0.44158277
+Connection to: 19 -- -0.073315926
+Connection to: 20 -- 1.7518259
+Connection to: 21 -- 0.9840734
+Connection to: 22 -- 1.7184898
+Connection to: 23 -- 0.7479501
+Connection to: 24 -- 0.1778425
+Connection to: 25 -- -0.34767437
+Connection to: 26 -- -1.27372
+Node END
+Node: 46
+Connection to: 0 -- -0.035176396
+Connection to: 1 -- 0.1617845
+Connection to: 2 -- 0.016619101
+Connection to: 3 -- -0.19747004
+Connection to: 4 -- -0.86272705
+Connection to: 5 -- 0.75872886
+Connection to: 6 -- 0.5534734
+Connection to: 7 -- 1.8197784
+Connection to: 8 -- -0.80511284
+Connection to: 9 -- 1.1501355
+Connection to: 10 -- 0.21212825
+Connection to: 11 -- 0.8514558
+Connection to: 12 -- -2.308537
+Connection to: 13 -- 0.15209126
+Connection to: 14 -- 0.77480304
+Connection to: 15 -- -1.3341205
+Connection to: 16 -- 0.14989606
+Connection to: 17 -- -0.04749024
+Connection to: 18 -- -0.94305766
+Connection to: 19 -- 1.2902917
+Connection to: 20 -- 1.8478159
+Connection to: 21 -- 0.2883147
+Connection to: 22 -- 0.79739356
+Connection to: 23 -- -1.024235
+Connection to: 24 -- -1.1596777
+Connection to: 25 -- -1.1616406
+Connection to: 26 -- -1.5920209
+Node END
+Node: 47
+Connection to: 0 -- 1.3901663
+Connection to: 1 -- -1.0982535
+Connection to: 2 -- 0.116548955
+Connection to: 3 -- -0.015430108
+Connection to: 4 -- -0.09262489
+Connection to: 5 -- -0.23667908
+Connection to: 6 -- 1.499302
+Connection to: 7 -- -1.2156647
+Connection to: 8 -- 1.3170899
+Connection to: 9 -- 0.11389059
+Connection to: 10 -- 0.615543
+Connection to: 11 -- 1.0564401
+Connection to: 12 -- 0.6112515
+Connection to: 13 -- -0.2359306
+Connection to: 14 -- -2.0382318
+Connection to: 15 -- -0.97792566
+Connection to: 16 -- 1.5141746
+Connection to: 17 -- -0.85517037
+Connection to: 18 -- -0.15360896
+Connection to: 19 -- -0.8636606
+Connection to: 20 -- 1.1826428
+Connection to: 21 -- 1.1919471
+Connection to: 22 -- 0.2556447
+Connection to: 23 -- -0.38390988
+Connection to: 24 -- 0.16240299
+Connection to: 25 -- -0.2378373
+Connection to: 26 -- 0.037333786
+Node END
+Node: 48
+Connection to: 0 -- 1.2312708
+Connection to: 1 -- -0.6658535
+Connection to: 2 -- -2.1470318
+Connection to: 3 -- -0.8251865
+Connection to: 4 -- -0.5399866
+Connection to: 5 -- -0.24008653
+Connection to: 6 -- 1.5298915
+Connection to: 7 -- -0.9471352
+Connection to: 8 -- 0.42360112
+Connection to: 9 -- 1.1621519
+Connection to: 10 -- 1.1975967
+Connection to: 11 -- 0.88752294
+Connection to: 12 -- -0.47135076
+Connection to: 13 -- 2.052293
+Connection to: 14 -- 0.41332433
+Connection to: 15 -- 0.2594263
+Connection to: 16 -- 0.9497318
+Connection to: 17 -- -1.693015
+Connection to: 18 -- 1.6552262
+Connection to: 19 -- -0.79250264
+Connection to: 20 -- 1.0766308
+Connection to: 21 -- 0.2691081
+Connection to: 22 -- 0.5618322
+Connection to: 23 -- 0.897131
+Connection to: 24 -- -0.14660403
+Connection to: 25 -- -0.30195224
+Connection to: 26 -- 0.8402827
+Node END
+Layer END
+Layer: 1
+Node: 0
+Connection to: 0 -- 0.5325439
+Connection to: 1 -- -0.9241053
+Connection to: 2 -- 1.2303411
+Connection to: 3 -- -0.17780149
+Connection to: 4 -- 0.21923643
+Connection to: 5 -- 2.0435994
+Connection to: 6 -- -1.5429559
+Connection to: 7 -- -0.32572025
+Connection to: 8 -- -0.035517037
+Connection to: 9 -- -2.4375498
+Connection to: 10 -- -0.5919169
+Connection to: 11 -- 0.23463258
+Connection to: 12 -- 0.27637926
+Connection to: 13 -- -0.33957437
+Connection to: 14 -- 0.39988592
+Node END
+Node: 1
+Connection to: 0 -- -3.3486655
+Connection to: 1 -- -0.64913595
+Connection to: 2 -- -0.5694618
+Connection to: 3 -- 0.25427142
+Connection to: 4 -- -0.07906589
+Connection to: 5 -- 0.8493582
+Connection to: 6 -- -2.7592702
+Connection to: 7 -- -0.403532
+Connection to: 8 -- -0.35730022
+Connection to: 9 -- 0.7702184
+Connection to: 10 -- 1.1879139
+Connection to: 11 -- 0.5264796
+Connection to: 12 -- -1.7517978
+Connection to: 13 -- -1.6926183
+Connection to: 14 -- -2.1510088
+Node END
+Node: 2
+Connection to: 0 -- -0.7834984
+Connection to: 1 -- -2.060369
+Connection to: 2 -- 0.34859622
+Connection to: 3 -- -0.31363755
+Connection to: 4 -- -0.29034275
+Connection to: 5 -- 0.9233135
+Connection to: 6 -- 1.0945349
+Connection to: 7 -- 0.5709641
+Connection to: 8 -- 0.57401407
+Connection to: 9 -- -0.007469982
+Connection to: 10 -- -0.52017885
+Connection to: 11 -- 0.23176724
+Connection to: 12 -- 1.363089
+Connection to: 13 -- 0.2131207
+Connection to: 14 -- -0.054720737
+Node END
+Node: 3
+Connection to: 0 -- 0.23344097
+Connection to: 1 -- -0.097000435
+Connection to: 2 -- 1.3969725
+Connection to: 3 -- 0.30149183
+Connection to: 4 -- -2.0007286
+Connection to: 5 -- -1.186134
+Connection to: 6 -- 0.28588974
+Connection to: 7 -- 0.15002194
+Connection to: 8 -- -1.0335002
+Connection to: 9 -- 0.20120928
+Connection to: 10 -- -0.6975111
+Connection to: 11 -- 0.4687449
+Connection to: 12 -- -0.35863164
+Connection to: 13 -- -0.003061816
+Connection to: 14 -- -0.36679316
+Node END
+Node: 4
+Connection to: 0 -- -0.42084366
+Connection to: 1 -- -0.18503833
+Connection to: 2 -- -0.35242936
+Connection to: 3 -- -0.74044096
+Connection to: 4 -- -0.7697787
+Connection to: 5 -- 1.0900878
+Connection to: 6 -- 0.31040862
+Connection to: 7 -- -0.5345466
+Connection to: 8 -- 0.14768612
+Connection to: 9 -- 0.12306413
+Connection to: 10 -- 0.82820034
+Connection to: 11 -- -1.3088615
+Connection to: 12 -- -0.7773831
+Connection to: 13 -- -0.6746938
+Connection to: 14 -- -1.6766218
+Node END
+Node: 5
+Connection to: 0 -- 0.32575703
+Connection to: 1 -- 2.7978318
+Connection to: 2 -- -0.008542031
+Connection to: 3 -- 1.4071488
+Connection to: 4 -- 0.35623035
+Connection to: 5 -- 0.42684904
+Connection to: 6 -- 0.20239082
+Connection to: 7 -- 0.5296552
+Connection to: 8 -- -1.1268015
+Connection to: 9 -- -0.9007491
+Connection to: 10 -- 0.5607141
+Connection to: 11 -- 0.0830909
+Connection to: 12 -- -0.765231
+Connection to: 13 -- -0.09198395
+Connection to: 14 -- 0.015447006
+Node END
+Node: 6
+Connection to: 0 -- -0.8839558
+Connection to: 1 -- -0.8908577
+Connection to: 2 -- 0.5691489
+Connection to: 3 -- 0.315617
+Connection to: 4 -- 0.87318766
+Connection to: 5 -- -0.023919284
+Connection to: 6 -- 1.2277635
+Connection to: 7 -- 1.0535861
+Connection to: 8 -- -1.0141213
+Connection to: 9 -- -1.456915
+Connection to: 10 -- -1.2534753
+Connection to: 11 -- 0.62244153
+Connection to: 12 -- -2.1969874
+Connection to: 13 -- -0.07224537
+Connection to: 14 -- -0.13046211
+Node END
+Node: 7
+Connection to: 0 -- -1.1238936
+Connection to: 1 -- 0.844184
+Connection to: 2 -- 0.448918
+Connection to: 3 -- -1.8017132
+Connection to: 4 -- -0.1352468
+Connection to: 5 -- 0.9969214
+Connection to: 6 -- 0.059729025
+Connection to: 7 -- 0.42277375
+Connection to: 8 -- -0.55985856
+Connection to: 9 -- -0.058573425
+Connection to: 10 -- 1.1683458
+Connection to: 11 -- 1.5759482
+Connection to: 12 -- 2.0361323
+Connection to: 13 -- 1.4929767
+Connection to: 14 -- -1.0798314
+Node END
+Node: 8
+Connection to: 0 -- 1.9046742
+Connection to: 1 -- 0.30099306
+Connection to: 2 -- -1.4162291
+Connection to: 3 -- 1.1899924
+Connection to: 4 -- 0.46866712
+Connection to: 5 -- -1.7363019
+Connection to: 6 -- 1.2792572
+Connection to: 7 -- 0.15411389
+Connection to: 8 -- 0.14787465
+Connection to: 9 -- 1.356129
+Connection to: 10 -- -1.7155739
+Connection to: 11 -- 0.8790015
+Connection to: 12 -- -1.368463
+Connection to: 13 -- -2.1193087
+Connection to: 14 -- -1.2140259
+Node END
+Node: 9
+Connection to: 0 -- 1.7540791
+Connection to: 1 -- -0.20608632
+Connection to: 2 -- 0.29394922
+Connection to: 3 -- -1.7456232
+Connection to: 4 -- 0.5775099
+Connection to: 5 -- -0.9544563
+Connection to: 6 -- 1.1183912
+Connection to: 7 -- 0.3793436
+Connection to: 8 -- -0.28514266
+Connection to: 9 -- -0.55728817
+Connection to: 10 -- -1.2870094
+Connection to: 11 -- -0.7921103
+Connection to: 12 -- 0.7125678
+Connection to: 13 -- -0.042978548
+Connection to: 14 -- -2.9494624
+Node END
+Node: 10
+Connection to: 0 -- 0.14507356
+Connection to: 1 -- 1.171678
+Connection to: 2 -- 1.1339887
+Connection to: 3 -- 1.340892
+Connection to: 4 -- -0.92190814
+Connection to: 5 -- 0.2886105
+Connection to: 6 -- -0.75197315
+Connection to: 7 -- -0.49608073
+Connection to: 8 -- 2.3998709
+Connection to: 9 -- -1.5720133
+Connection to: 10 -- 2.444839
+Connection to: 11 -- -2.3843117
+Connection to: 12 -- -0.87667584
+Connection to: 13 -- -0.06100294
+Connection to: 14 -- -0.7909132
+Node END
+Node: 11
+Connection to: 0 -- 0.5014483
+Connection to: 1 -- 0.8345612
+Connection to: 2 -- -0.6835972
+Connection to: 3 -- 0.60456645
+Connection to: 4 -- -0.55684865
+Connection to: 5 -- -0.6990583
+Connection to: 6 -- -0.22790465
+Connection to: 7 -- -0.2846636
+Connection to: 8 -- 0.27201602
+Connection to: 9 -- 1.0047535
+Connection to: 10 -- 0.62108994
+Connection to: 11 -- -0.114106596
+Connection to: 12 -- 0.5274116
+Connection to: 13 -- 0.854686
+Connection to: 14 -- 1.1028349
+Node END
+Node: 12
+Connection to: 0 -- -1.8131535
+Connection to: 1 -- 0.2514606
+Connection to: 2 -- 0.14803395
+Connection to: 3 -- -1.5673715
+Connection to: 4 -- 0.4331852
+Connection to: 5 -- -0.43077415
+Connection to: 6 -- 0.25107613
+Connection to: 7 -- 0.3043738
+Connection to: 8 -- -0.7460561
+Connection to: 9 -- -0.02668231
+Connection to: 10 -- 0.6135082
+Connection to: 11 -- 0.3947175
+Connection to: 12 -- -0.17543021
+Connection to: 13 -- -0.0040761977
+Connection to: 14 -- -0.71381974
+Node END
+Node: 13
+Connection to: 0 -- -0.19901398
+Connection to: 1 -- 0.06345859
+Connection to: 2 -- 0.89007354
+Connection to: 3 -- 1.0213517
+Connection to: 4 -- 0.5984309
+Connection to: 5 -- -1.4416351
+Connection to: 6 -- 0.10534504
+Connection to: 7 -- 1.5924602
+Connection to: 8 -- 0.26054108
+Connection to: 9 -- 0.4453642
+Connection to: 10 -- 0.78411055
+Connection to: 11 -- 0.43473312
+Connection to: 12 -- -0.8956883
+Connection to: 13 -- 0.57243836
+Connection to: 14 -- 0.7544035
+Node END
+Node: 14
+Connection to: 0 -- -0.09600718
+Connection to: 1 -- 2.3426108
+Connection to: 2 -- 0.103675365
+Connection to: 3 -- -1.3392725
+Connection to: 4 -- -0.49096456
+Connection to: 5 -- 0.95582867
+Connection to: 6 -- -0.83037555
+Connection to: 7 -- -1.6268395
+Connection to: 8 -- 1.3491874
+Connection to: 9 -- -0.37305593
+Connection to: 10 -- -0.82489777
+Connection to: 11 -- 0.21995765
+Connection to: 12 -- 0.51021075
+Connection to: 13 -- -2.229886
+Connection to: 14 -- -0.84150577
+Node END
+Node: 15
+Connection to: 0 -- -0.8929088
+Connection to: 1 -- 0.37553307
+Connection to: 2 -- 1.9795333
+Connection to: 3 -- -0.5428325
+Connection to: 4 -- 1.0226524
+Connection to: 5 -- 0.08607799
+Connection to: 6 -- 1.1061163
+Connection to: 7 -- -0.043244764
+Connection to: 8 -- -1.23016
+Connection to: 9 -- 0.06501098
+Connection to: 10 -- -1.5709404
+Connection to: 11 -- 0.09188317
+Connection to: 12 -- -0.066611856
+Connection to: 13 -- 0.7939991
+Connection to: 14 -- -1.3075767
+Node END
+Node: 16
+Connection to: 0 -- 1.8909076
+Connection to: 1 -- -0.26429373
+Connection to: 2 -- -1.4505942
+Connection to: 3 -- -0.20312527
+Connection to: 4 -- 0.22312108
+Connection to: 5 -- -1.3808278
+Connection to: 6 -- 0.52106214
+Connection to: 7 -- -0.3527364
+Connection to: 8 -- 0.17878762
+Connection to: 9 -- 0.33865818
+Connection to: 10 -- 0.22782317
+Connection to: 11 -- 2.572039
+Connection to: 12 -- 1.3770981
+Connection to: 13 -- -0.7362983
+Connection to: 14 -- 0.023381457
+Node END
+Node: 17
+Connection to: 0 -- 0.1291847
+Connection to: 1 -- -0.5371331
+Connection to: 2 -- -1.1154418
+Connection to: 3 -- 0.5909041
+Connection to: 4 -- 0.74595916
+Connection to: 5 -- -0.3159545
+Connection to: 6 -- -0.9920862
+Connection to: 7 -- 0.933476
+Connection to: 8 -- -0.5089746
+Connection to: 9 -- -0.58366406
+Connection to: 10 -- 0.63610613
+Connection to: 11 -- 0.7297088
+Connection to: 12 -- 1.0962734
+Connection to: 13 -- 0.16537213
+Connection to: 14 -- -0.18359336
+Node END
+Node: 18
+Connection to: 0 -- 0.29732737
+Connection to: 1 -- 1.4723076
+Connection to: 2 -- 2.7799263
+Connection to: 3 -- 1.1560174
+Connection to: 4 -- -1.5021526
+Connection to: 5 -- -0.5075814
+Connection to: 6 -- 1.4414562
+Connection to: 7 -- -0.23288214
+Connection to: 8 -- 0.36351022
+Connection to: 9 -- 0.39629647
+Connection to: 10 -- 1.1527834
+Connection to: 11 -- 0.384222
+Connection to: 12 -- -0.43568638
+Connection to: 13 -- 0.25667015
+Connection to: 14 -- 1.3653874
+Node END
+Node: 19
+Connection to: 0 -- -1.4199657
+Connection to: 1 -- 1.0159005
+Connection to: 2 -- 0.8725369
+Connection to: 3 -- 1.4703581
+Connection to: 4 -- 0.15329784
+Connection to: 5 -- -0.4173041
+Connection to: 6 -- -0.21822658
+Connection to: 7 -- 0.61162627
+Connection to: 8 -- 0.6864749
+Connection to: 9 -- -0.67880523
+Connection to: 10 -- -0.4735017
+Connection to: 11 -- 0.88399696
+Connection to: 12 -- 0.9116707
+Connection to: 13 -- -1.5996828
+Connection to: 14 -- -0.6440547
+Node END
+Node: 20
+Connection to: 0 -- 0.13158995
+Connection to: 1 -- 0.12354836
+Connection to: 2 -- 0.7025701
+Connection to: 3 -- -0.0051601976
+Connection to: 4 -- -0.70073295
+Connection to: 5 -- -0.83278805
+Connection to: 6 -- -1.6834058
+Connection to: 7 -- -0.3533654
+Connection to: 8 -- 1.7224313
+Connection to: 9 -- -1.8136611
+Connection to: 10 -- 0.7080662
+Connection to: 11 -- -0.3871926
+Connection to: 12 -- 0.50381553
+Connection to: 13 -- 1.2243167
+Connection to: 14 -- -1.7548634
+Node END
+Node: 21
+Connection to: 0 -- 1.0884327
+Connection to: 1 -- 0.19187608
+Connection to: 2 -- 2.1084223
+Connection to: 3 -- -0.10111346
+Connection to: 4 -- -1.2013694
+Connection to: 5 -- 0.037611544
+Connection to: 6 -- 0.3671817
+Connection to: 7 -- 0.08382808
+Connection to: 8 -- 0.4525492
+Connection to: 9 -- -0.28564927
+Connection to: 10 -- 0.79806757
+Connection to: 11 -- 1.4343733
+Connection to: 12 -- -0.18855928
+Connection to: 13 -- 1.2768303
+Connection to: 14 -- -0.5169254
+Node END
+Node: 22
+Connection to: 0 -- 0.32324457
+Connection to: 1 -- -0.44442067
+Connection to: 2 -- -0.64971375
+Connection to: 3 -- -0.44016704
+Connection to: 4 -- -0.4480429
+Connection to: 5 -- -0.47288287
+Connection to: 6 -- -0.0013014674
+Connection to: 7 -- -0.7354833
+Connection to: 8 -- -0.27294374
+Connection to: 9 -- 0.42778364
+Connection to: 10 -- 1.2352723
+Connection to: 11 -- 0.14918956
+Connection to: 12 -- 0.15444714
+Connection to: 13 -- -0.87258565
+Connection to: 14 -- -0.060511984
+Node END
+Node: 23
+Connection to: 0 -- 0.6642451
+Connection to: 1 -- 0.44072232
+Connection to: 2 -- 0.22126672
+Connection to: 3 -- -1.0261782
+Connection to: 4 -- -0.9703449
+Connection to: 5 -- 2.6027775
+Connection to: 6 -- 0.6343447
+Connection to: 7 -- -0.13941388
+Connection to: 8 -- -0.20073721
+Connection to: 9 -- -1.9369752
+Connection to: 10 -- -0.19786556
+Connection to: 11 -- -1.0393759
+Connection to: 12 -- 1.4569556
+Connection to: 13 -- 1.3474554
+Connection to: 14 -- -1.1946383
+Node END
+Node: 24
+Connection to: 0 -- 0.01804787
+Connection to: 1 -- 0.48220262
+Connection to: 2 -- 0.76312387
+Connection to: 3 -- -0.0503892
+Connection to: 4 -- -0.47176853
+Connection to: 5 -- 0.6480781
+Connection to: 6 -- -1.3836818
+Connection to: 7 -- 0.078688085
+Connection to: 8 -- 0.25995988
+Connection to: 9 -- -0.12505019
+Connection to: 10 -- 0.6058494
+Connection to: 11 -- 0.46839008
+Connection to: 12 -- 0.5690917
+Connection to: 13 -- -0.8582139
+Connection to: 14 -- 1.2677534
+Node END
+Node: 25
+Connection to: 0 -- 0.6026019
+Connection to: 1 -- -0.8041272
+Connection to: 2 -- -0.76868224
+Connection to: 3 -- -0.07751335
+Connection to: 4 -- 1.7114453
+Connection to: 5 -- 0.696257
+Connection to: 6 -- 1.3063695
+Connection to: 7 -- 1.8977379
+Connection to: 8 -- -0.5108781
+Connection to: 9 -- -0.1348258
+Connection to: 10 -- 0.16170254
+Connection to: 11 -- -0.097019106
+Connection to: 12 -- 1.4571716
+Connection to: 13 -- -0.98591197
+Connection to: 14 -- -0.83995724
+Node END
+Node: 26
+Connection to: 0 -- -0.032928944
+Connection to: 1 -- -0.62461793
+Connection to: 2 -- -0.2997999
+Connection to: 3 -- 0.3919622
+Connection to: 4 -- -0.37522727
+Connection to: 5 -- -0.3586117
+Connection to: 6 -- 0.029227242
+Connection to: 7 -- 0.23833975
+Connection to: 8 -- -0.43286338
+Connection to: 9 -- 0.59629387
+Connection to: 10 -- 0.5594424
+Connection to: 11 -- -0.39412665
+Connection to: 12 -- 1.5688868
+Connection to: 13 -- 0.24467686
+Connection to: 14 -- 0.06274068
+Node END
+Layer END
+Layer: 2
+Node: 0
+Connection to: 0 -- -0.31493205
+Connection to: 1 -- -0.49503323
+Connection to: 2 -- 0.08310142
+Connection to: 3 -- -1.2890666
+Node END
+Node: 1
+Connection to: 0 -- -0.14683351
+Connection to: 1 -- 0.72050226
+Connection to: 2 -- -1.1369126
+Connection to: 3 -- 0.09919004
+Node END
+Node: 2
+Connection to: 0 -- 0.9361799
+Connection to: 1 -- -0.58405423
+Connection to: 2 -- 0.04036501
+Connection to: 3 -- -1.7687441
+Node END
+Node: 3
+Connection to: 0 -- -0.060594648
+Connection to: 1 -- 0.8248344
+Connection to: 2 -- 0.36168316
+Connection to: 3 -- -1.4645596
+Node END
+Node: 4
+Connection to: 0 -- -1.3781303
+Connection to: 1 -- -0.587255
+Connection to: 2 -- 0.98432136
+Connection to: 3 -- 0.54149866
+Node END
+Node: 5
+Connection to: 0 -- -0.37847558
+Connection to: 1 -- 0.08301371
+Connection to: 2 -- 0.096094936
+Connection to: 3 -- -0.5341582
+Node END
+Node: 6
+Connection to: 0 -- 0.2049807
+Connection to: 1 -- 0.019677192
+Connection to: 2 -- -0.044701517
+Connection to: 3 -- 1.7202296
+Node END
+Node: 7
+Connection to: 0 -- 0.2473884
+Connection to: 1 -- 0.8428378
+Connection to: 2 -- 0.060672536
+Connection to: 3 -- -1.6957016
+Node END
+Node: 8
+Connection to: 0 -- 0.74100006
+Connection to: 1 -- -2.5271902
+Connection to: 2 -- 0.37443754
+Connection to: 3 -- 0.9796765
+Node END
+Node: 9
+Connection to: 0 -- -0.35857797
+Connection to: 1 -- -0.49022892
+Connection to: 2 -- 1.3680692
+Connection to: 3 -- -0.50048864
+Node END
+Node: 10
+Connection to: 0 -- 1.9814457
+Connection to: 1 -- -0.92732596
+Connection to: 2 -- -0.048029326
+Connection to: 3 -- 1.6121767
+Node END
+Node: 11
+Connection to: 0 -- 0.16306365
+Connection to: 1 -- 1.2052615
+Connection to: 2 -- 1.012578
+Connection to: 3 -- -0.9357432
+Node END
+Node: 12
+Connection to: 0 -- -1.15621
+Connection to: 1 -- 0.6828279
+Connection to: 2 -- 2.6799622
+Connection to: 3 -- 0.051743135
+Node END
+Node: 13
+Connection to: 0 -- 0.39849237
+Connection to: 1 -- 0.28038496
+Connection to: 2 -- 0.58305013
+Connection to: 3 -- -0.8657855
+Node END
+Node: 14
+Connection to: 0 -- -0.32111573
+Connection to: 1 -- 0.34994176
+Connection to: 2 -- 0.73247266
+Connection to: 3 -- 0.10975242
+Node END
+Layer END
+Layer: 3
+Node: 0
+Node END
+Node: 1
+Node END
+Node: 2
+Node END
+Node: 3
+Node END
+Layer END

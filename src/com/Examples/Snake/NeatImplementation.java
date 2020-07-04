@@ -7,13 +7,14 @@ import com.NEAT.NeatTrainer;
 
 public class NeatImplementation implements NeatTrainer
 {
-
+    int thingsToDo = 10;
+    float bestAvg = 0;
     @Override
     public float evaluateSpecies(FFNeuralNetwork nn)
     {
         float fitnessSum = 0;
         int fitnessCount = 0;
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < thingsToDo; i++)
         {
             Snake snake = new Snake(false);
             //int startingManhattan = snake.manhattanDistanceToApple()+3;
@@ -44,16 +45,25 @@ public class NeatImplementation implements NeatTrainer
                 else if (snake.movesSinceApple > 100)
                     snake.dead = true;
             }
-            float moveBonus = moves > 20 ? 20 : moves;
+            float moveBonus = Math.min(moves, 20);
             float usedMoveBonus = 0;
             for(int x =0; x <4 ; x++)
             {
-                usedMoveBonus+= snake.usedMoves[x];
+                usedMoveBonus += snake.usedMoves[x];
             }
-            usedMoveBonus = usedMoveBonus * 0.1F;
-            fitnessSum += snake.applesEaten + moveBonus/20000F + usedMoveBonus;
+            usedMoveBonus = usedMoveBonus * 0.2F;
+            fitnessSum += snake.applesEaten + moveBonus/20000F + (usedMoveBonus);
             fitnessCount++;
         }
+        if(fitnessSum/fitnessCount > bestAvg)
+        {
+            bestAvg = fitnessSum/fitnessCount;
+            if(bestAvg > 3)
+            {
+                thingsToDo = 6;
+            }
+        }
+
         //System.out.println("Apples eaten: " + snake.applesEaten);
         return fitnessSum / fitnessCount;
     }
@@ -61,10 +71,11 @@ public class NeatImplementation implements NeatTrainer
     public void evolve()
     {
         Config config = new Config();
-        config.initialDimensions = new int[] {25, 15, 4};
+        config.initialDimensions = new int[] {49, 27, 15, 4};
         EvolutionController ec = new EvolutionController(config, this);
         EvolveThread evolver = new EvolveThread(ec);
         evolver.start();
+        Snake snake = new Snake(true);
         while(true)
         {
             if(ec.currentGeneration < 1)
@@ -76,14 +87,13 @@ public class NeatImplementation implements NeatTrainer
                 }
                 continue;
             }
-            Snake snake = new Snake(true);
             try
             {
-
+                snake.reset();
                 int moves = 0;
                 while(!snake.dead) {
                     moves++;
-                    if(snake.movesSinceApple > 100)
+                    if(snake.movesSinceApple > snake.rows*snake.cols+10)
                         snake.dead = true;
                     float[] output = ec.recentBest.brain.feed(snake.getState());
 
@@ -109,8 +119,7 @@ public class NeatImplementation implements NeatTrainer
                     }
                 }
 
-                snake.d.dispose();
-            } catch (Exception e) {snake.d.dispose();
+            } catch (Exception e) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException interruptedException) {
