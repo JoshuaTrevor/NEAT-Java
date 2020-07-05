@@ -10,7 +10,11 @@ import com.NEAT.Breeding.Mutator;
 import com.NEAT.Workers.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.concurrent.*;
 
@@ -43,14 +47,14 @@ public class EvolutionController
         ticker = new GlobalTick(this);
     }
 
-    public void train()
+    public void train(boolean loadPrevious)
     {
         for(SpeciesEvaluator evaluator : evaluators)
             evaluator.start();
         pruner.start();
         ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
         exec.scheduleAtFixedRate(ticker, 0, 1, TimeUnit.SECONDS);
-        initPopulation(config);
+        initPopulation(config, loadPrevious);
 
 
         waiting = true;
@@ -69,9 +73,7 @@ public class EvolutionController
         {
             currentGeneration = i + 1;
             System.out.println("(Gen " + currentGeneration + ")" +
-                    "fitness: " + mean(evaluatedSpecies.toArray()) +" Best fitness: " + evaluatedSpecies.last().fitness);
-            if (mean(evaluatedSpecies.toArray()) > 25.7)
-                trialCount = 100;
+                    "fitness: " + mean(evaluatedSpecies.toArray()) +" Best fitness: " + evaluatedSpecies.last().fitness + " (Kept species: " + evaluatedSpecies.size() + ")");
             recentBest = evaluatedSpecies.last().clone();
             if(currentGeneration % config.checkpointFreq == 0)
                 saveRecent();
@@ -112,15 +114,37 @@ public class EvolutionController
         b.reproduce(evaluatedSpecies);
     }
 
-    public void initPopulation(Config config)
+    public void initPopulation(Config config, boolean loadPrevious)
     {
         //Keeping the full population ever is super memory inefficient, so only keep the top X results relative to both population size and absolute
         System.out.println("Creating initial population");
+
+        if(loadPrevious)
+        {
+            FFNeuralNetwork nn = new FFNeuralNetwork(FFNeuralNetwork.ConnectionStrategy.MANUAL, config);
+            try {
+                String content = Files.readString(Paths.get("BestBrain"), StandardCharsets.US_ASCII);
+                nn.loadFromString(content);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            for(int i = 0; i < config.populationSize; i++)
+            {
+
+                Species s = new Species(nn.copy());
+                unevaluatedSpecies.add(s);
+                notifyEvaluators();
+            }
+            System.out.println("Loaded previous model");
+            return;
+        }
+
         long start = System.currentTimeMillis();
         //Create species
         for(int i = 0; i < config.populationSize; i++)
         {
-            if(i%10==0)
+            if(i%100==0)
                 System.out.println(i);
             FFNeuralNetwork nn = new FFNeuralNetwork(FFNeuralNetwork.ConnectionStrategy.INDIRECTLY_CONNECTED, config);
             Species s = new Species(nn);

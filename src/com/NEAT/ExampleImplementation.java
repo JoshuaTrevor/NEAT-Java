@@ -19,7 +19,7 @@ public class ExampleImplementation implements NeatTrainer
     public void evolve()
     {
         EvolutionController ec = new EvolutionController(new Config(), this);
-        ec.train();
+        ec.train(false);
     }
 
     //Using default config setup

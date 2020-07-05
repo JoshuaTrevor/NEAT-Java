@@ -36,8 +36,8 @@ public class Snake
         this.shouldRender = shouldRender;
         //Init snake position
         Random r = new Random();
-        int startX = r.nextInt(cols-1)+1;
-        int startY = r.nextInt(rows-1)+1;
+        int startX = 3;//r.nextInt(cols-1)+1;
+        int startY = 3;//r.nextInt(rows-1)+1;
 
         //Create a second body part which is offset to teach the snake not to eat itself
         int offset = r.nextInt(4);
@@ -45,8 +45,9 @@ public class Snake
         Coords c = new Coords(startX, startY);
         moveSquare(c, dir);
 
+        snake.add(c);
         snake.add(new Coords(startX, startY));
-        snake.add(c); //For now single segment start
+
 
         setFoodLocation();
         if(shouldRender)
@@ -221,9 +222,10 @@ public class Snake
     public void reset()
     {
         snake.clear();
+        movesSinceApple = 0;
         Random r = new Random();
-        int startX = r.nextInt(cols-1)+1;
-        int startY = r.nextInt(rows-1)+1;
+        int startX = 3;//r.nextInt(cols-1)+1;
+        int startY = 3;//r.nextInt(rows-1)+1;
         this.dead=false;
 
         //Create a second body part which is offset to teach the snake not to eat itself
@@ -232,8 +234,8 @@ public class Snake
         Coords c = new Coords(startX, startY);
         moveSquare(c, dir);
 
+        snake.add(c);
         snake.add(new Coords(startX, startY));
-        snake.add(c); //For now single segment start
 
         setFoodLocation();
         pushGraphicsChanges();

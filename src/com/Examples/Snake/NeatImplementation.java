@@ -7,7 +7,7 @@ import com.NEAT.NeatTrainer;
 
 public class NeatImplementation implements NeatTrainer
 {
-    int thingsToDo = 10;
+    int thingsToDo = 100;
     float bestAvg = 0;
     @Override
     public float evaluateSpecies(FFNeuralNetwork nn)
@@ -17,8 +17,9 @@ public class NeatImplementation implements NeatTrainer
         for(int i = 0; i < thingsToDo; i++)
         {
             Snake snake = new Snake(false);
-            //int startingManhattan = snake.manhattanDistanceToApple()+3;
             int moves = 0;
+            int productiveMoves = 0;
+            int destructiveMoves = 0;
             while(!snake.dead)
             {
                 float[] output = nn.feed(snake.getState());
@@ -39,28 +40,37 @@ public class NeatImplementation implements NeatTrainer
                     System.out.println("An error has occurred");
                     System.exit(0);
                 }
+                int prevManhattan = snake.manhattanDistanceToApple();
                 snake.move(Snake.Direction.values()[maxValIndex]);
+                if(snake.manhattanDistanceToApple() > prevManhattan)
+                    destructiveMoves++;
+                else
+                    productiveMoves++;
                 if(moves < 30)
                     moves++;
                 else if (snake.movesSinceApple > 100)
                     snake.dead = true;
             }
-            float moveBonus = Math.min(moves, 20);
+            float moveBonus = 100-(Math.min(moves, 10) * 10);
             float usedMoveBonus = 0;
             for(int x =0; x <4 ; x++)
             {
                 usedMoveBonus += snake.usedMoves[x];
             }
             usedMoveBonus = usedMoveBonus * 0.2F;
-            fitnessSum += snake.applesEaten + moveBonus/20000F + (usedMoveBonus);
+            fitnessSum += snake.applesEaten*10000 + productiveMoves - destructiveMoves;
             fitnessCount++;
         }
         if(fitnessSum/fitnessCount > bestAvg)
         {
             bestAvg = fitnessSum/fitnessCount;
-            if(bestAvg > 3)
+            if(bestAvg > 30000)
             {
-                thingsToDo = 6;
+                System.out.println("--------ENTERING STAGE 2--------------");
+                thingsToDo = 10;
+                nn.config.mutateRate = nn.config.mutateRate/2;
+                nn.config.mutateAmount = nn.config.mutateAmount/1.5F;
+                nn.config.superMutateRate = 0;
             }
         }
 
@@ -71,7 +81,7 @@ public class NeatImplementation implements NeatTrainer
     public void evolve()
     {
         Config config = new Config();
-        config.initialDimensions = new int[] {49, 27, 15, 4};
+        config.initialDimensions = new int[] {49, 27, 4};
         EvolutionController ec = new EvolutionController(config, this);
         EvolveThread evolver = new EvolveThread(ec);
         evolver.start();
@@ -96,6 +106,7 @@ public class NeatImplementation implements NeatTrainer
                     if(snake.movesSinceApple > snake.rows*snake.cols+10)
                         snake.dead = true;
                     float[] output = ec.recentBest.brain.feed(snake.getState());
+                    snake.d.setTitle("Generation: " + ec.currentGeneration);
 
                     //Convert to direction
                     float maxVal = -1000;
@@ -140,7 +151,7 @@ class EvolveThread extends Thread
 
     public void evolve()
     {
-        controller.train();
+        controller.train(true);
     }
 
     @Override

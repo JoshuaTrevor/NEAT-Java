@@ -216,16 +216,29 @@ public class FFNeuralNetwork
         return output.toString();
     }
 
-    enum target {NODE, LAYER}
     public void loadFromString(String strInput)
     {
         String[] lines = strInput.split("\n");
-
+        int targetLayer = 0;
+        int targetNode = -1;
         for(int pointer = 0; pointer < lines.length; pointer++)
         {
-            if(lines[pointer].startsWith("Layer: "))
+            if(lines[pointer].startsWith("Layer END"))
             {
+                targetLayer++;
+            }
 
+            else if(lines[pointer].startsWith("Node: "))
+            {
+                String lineNumberOnly = lines[pointer].replaceAll("\\D","");
+                targetNode = Integer.parseInt(lineNumberOnly);
+            }
+
+            else if(lines[pointer].startsWith("Connection to:"))
+            {
+                int nodeID = Integer.parseInt(lines[pointer].split(": ")[1].split(" --")[0]);
+                float connectionWeight = Float.parseFloat(lines[pointer].split(" -- ")[1]);
+                this.layers[targetLayer].get(targetNode).connections.put(nodeID, connectionWeight);
             }
         }
     }
