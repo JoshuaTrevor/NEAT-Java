@@ -14,10 +14,15 @@ public class Snake
     boolean hasEaten = false;
     int[] usedMoves = {0, 0, 0, 0};
     boolean dead;
+    boolean collision = false;
     boolean shouldRender;
     int movesSinceApple = 0;
-    int rows = 7;
-    int cols = 7;
+    int rows = 12;
+    int cols = 12;
+    private float bufferedStates[][] = new float[2][13];
+    float[] prevState = new float[11];
+    boolean first = true;
+    boolean missedBetterMove;
 
     public int applesEaten = 0;
 
@@ -36,8 +41,8 @@ public class Snake
         this.shouldRender = shouldRender;
         //Init snake position
         Random r = new Random();
-        int startX = 3;//r.nextInt(cols-1)+1;
-        int startY = 3;//r.nextInt(rows-1)+1;
+        int startX = cols/2;//r.nextInt(cols-1)+1;
+        int startY = rows/2;//r.nextInt(rows-1)+1;
 
         //Create a second body part which is offset to teach the snake not to eat itself
         int offset = r.nextInt(4);
@@ -79,8 +84,24 @@ public class Snake
         Coords temp;
         moveSquare(snake.get(0), d);
 
-        if(shouldDie())
+        if(shouldDie(snake.get(0))) {
+            this.collision = true;
             this.dead = true;
+
+            //Check if there was a non-killing move
+            for(Direction dir : Direction.values())
+            {
+                if(d != dir)
+                {
+                    Coords starting = oldCoords.copy();
+                    moveSquare(starting, dir);
+                    if(!shouldDie(starting))
+                    {
+                        this.missedBetterMove = true;
+                    }
+                }
+            }
+        }
 
         //Move all other parts into the position that their "leading part" was in
         for(int i = 1; i < snake.size(); i++)
@@ -130,9 +151,8 @@ public class Snake
             setFoodLocation();
     }
 
-    public boolean shouldDie()
+    public boolean shouldDie(Coords head)
     {
-        Coords head = snake.get(0);
         if(head.x > cols-1 || head.x < 0 || head.y > rows-1 || head.y < 0)
         {
             return true;
@@ -173,6 +193,16 @@ public class Snake
         };
     }
 
+    public Direction getClockwiseDir(Direction d)
+    {
+        return switch (d) {
+            case LEFT -> Direction.UP;
+            case RIGHT -> Direction.DOWN;
+            case UP -> Direction.RIGHT;
+            case DOWN -> Direction.LEFT;
+        };
+    }
+
     public float[] getState()
     {
         float[] state = new float[rows*cols];
@@ -182,26 +212,23 @@ public class Snake
             {
                 if(coordInsideSnake(new Coords(j, i)))
                 {
+                    //Body
                     state[i * cols + j] = -1;
                 }
+
                 else if(j == food.x && i == food.y)
                 {
-                    state[i * cols + j] = 2;
+                    //Food (used to be 2)
+                    state[i * cols + j] = 1.5F;
                 }
 
                 else if(j == snake.get(0).x && i == snake.get(0).y)
                 {
-                    state[i * cols + j] = 1;
+                    //Head (used to be 1)
+                    state[i * cols + j] = 0.1F;
                 }
             }
         }
-//        float[] state = new float[6];
-//        state[0] = snake.get(0).x;
-//        state[1] = snake.get(0).y;
-//        state[2] = snake.get(1).x;
-//        state[3] = snake.get(1).y;
-//        state[4] = food.x;
-//        state[5] = food.y;
 
         //Normalise values
         for(int i = 0; i < state.length; i++)
@@ -210,6 +237,77 @@ public class Snake
         }
 
         return state;
+    }
+
+    public float[] getStateDistances()
+    {
+        float[] output = new float[11];
+        output[0] = this.snake.get(0).x - this.food.x;
+        output[1] = this.snake.get(0).y - this.food.y;
+        output[2] = (float) Math.log(this.applesEaten);
+        if(output[2] > 0)
+            output[2] = output[2] * 20F;
+
+        //
+//        output[0] = this.snake.get(0).x;
+//        output[1] = this.snake.get(0).y;
+//        output[2] = this.food.x;
+//        output[3] = this.food.y;
+//        output[4] = this.applesEaten;
+        //Other values are distances to obstacles in 8 directions
+
+        int outputIndex = 3;
+        //Cardinal
+        for(Direction d : Direction.values())
+        {
+            Coords c = new Coords((int)output[0], (int)output[1]);
+            moveSquare(c, d);
+            int dist = 1;
+            while(c.x < cols && c.x > 0 && c.y < rows && c.y > 0 && !coordInsideSnake(c))
+            {
+                moveSquare(c, d);
+                dist++;
+            }
+            output[outputIndex] = dist;
+            outputIndex++;
+        }
+
+        //Diagonals
+        //For each direction, rotate 45 degrees clockwise
+        for(Direction d : Direction.values())
+        {
+            Coords c = new Coords((int)output[0], (int)output[1]);
+            int dist = 1;
+            moveSquare(c, d);
+            moveSquare(c, getClockwiseDir(d));
+
+            while(c.x < cols-1 && c.x > 0 && c.y < rows-1 && c.y > 0 && !coordInsideSnake(c))
+            {
+                moveSquare(c, d);
+                moveSquare(c, getClockwiseDir(d));
+                dist++;
+            }
+            output[outputIndex] = dist;
+            outputIndex++;
+        }
+
+        //Normalise values
+        for(int i = 0; i < output.length; i++)
+        {
+            output[i] = output[i]/rows;
+        }
+
+        if(!first && movesSinceApple % 10 == 0)
+        {
+            bufferedStates[0] = prevState;
+            bufferedStates[1] = output;
+        }
+
+        if(first)
+            first = false;
+
+        prevState = output;
+        return output;
     }
 
     public int manhattanDistanceToApple()
@@ -224,10 +322,10 @@ public class Snake
         snake.clear();
         movesSinceApple = 0;
         Random r = new Random();
-        int startX = 3;//r.nextInt(cols-1)+1;
-        int startY = 3;//r.nextInt(rows-1)+1;
+        int startX = cols/2;//r.nextInt(cols-1)+1;
+        int startY = rows/2;//r.nextInt(rows-1)+1;
         this.dead=false;
-
+        this.hasEaten = false;
         //Create a second body part which is offset to teach the snake not to eat itself
         int offset = r.nextInt(4);
         Direction dir = Direction.values()[offset];

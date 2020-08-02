@@ -15,6 +15,7 @@ public class GlobalTick implements Runnable
     public void run()
     {
             //System.out.println("tick");
+        //System.out.println(controller.unevaluatedSpecies.size());
             controller.workerMonitor.checkWorkers();
     }
 }

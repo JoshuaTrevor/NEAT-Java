@@ -135,6 +135,7 @@ public class EvolutionController
                 Species s = new Species(nn.copy());
                 unevaluatedSpecies.add(s);
                 notifyEvaluators();
+                this.recentBest = s;
             }
             System.out.println("Loaded previous model");
             return;

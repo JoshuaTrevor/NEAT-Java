@@ -12,8 +12,8 @@ public class Config
     public final int preservedSpeciesLimit = Math.round(preservedSpeciesRate*populationSize);
 
     //Mutation options
-    public float mutateRate = 0.85F;
-    public float mutateAmount = 0.15F; //Weight will be mutated by at most +- this number
+    public float mutateRate = 0.65F;
+    public float mutateAmount = 0.20F; //Weight will be mutated by at most +- this number
     public float superMutateRate = 0.01F;
     public float superMutateAmount = 0.8F;
 
