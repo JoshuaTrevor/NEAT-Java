@@ -22,6 +22,7 @@ public class Main {
 
         NeatImplementation n = new NeatImplementation();
         n.evolve();
+
 //        for(int i = 0; i < 18; i++) {
 //            try {
 //                Thread.sleep(1000);

@@ -17,12 +17,14 @@ public class Snake
     boolean collision = false;
     boolean shouldRender;
     int movesSinceApple = 0;
-    int rows = 12;
-    int cols = 12;
+    int rows = 10;
+    int cols = 10;
     private float bufferedStates[][] = new float[2][13];
     float[] prevState = new float[11];
     boolean first = true;
     boolean missedBetterMove;
+    boolean won = false;
+    boolean debugState = false;
 
     public int applesEaten = 0;
 
@@ -122,11 +124,20 @@ public class Snake
             hasEaten = true;
             applesEaten++;
             movesSinceApple = 0;
-            setFoodLocation();
+            if(!(this.applesEaten >= this.rows * this.cols - 2))
+                setFoodLocation();
+            else
+            {
+                this.won = true;
+                this.dead = true;
+            }
         }
 
         if(shouldRender)
             pushGraphicsChanges();
+
+        if(debugState)
+            getStateDistances();
     }
 
     public boolean coordInsideSnake(Coords query)
@@ -241,29 +252,21 @@ public class Snake
 
     public float[] getStateDistances()
     {
-        float[] output = new float[11];
-        output[0] = this.snake.get(0).x - this.food.x;
-        output[1] = this.snake.get(0).y - this.food.y;
-        output[2] = (float) Math.log(this.applesEaten);
-        if(output[2] > 0)
-            output[2] = output[2] * 20F;
+        float[] output = new float[10];
+        float fxdir = this.snake.get(0).x < 0 ? -1F : 1F;
+        float fydir = this.snake.get(0).y < 0 ? -1F : 1F;
+        output[0] = fxdir * Math.min(Math.abs(this.snake.get(0).x - this.food.x), 8)/8F;
+        output[1] = fydir * Math.min(Math.abs(this.snake.get(0).y - this.food.y), 8)/8F;
 
-        //
-//        output[0] = this.snake.get(0).x;
-//        output[1] = this.snake.get(0).y;
-//        output[2] = this.food.x;
-//        output[3] = this.food.y;
-//        output[4] = this.applesEaten;
-        //Other values are distances to obstacles in 8 directions
-
-        int outputIndex = 3;
+        int outputIndex = 2;
         //Cardinal
         for(Direction d : Direction.values())
         {
-            Coords c = new Coords((int)output[0], (int)output[1]);
+            Coords c = this.snake.get(0).copy();
             moveSquare(c, d);
-            int dist = 1;
-            while(c.x < cols && c.x > 0 && c.y < rows && c.y > 0 && !coordInsideSnake(c))
+            int dist = 0;
+            //if(head.x > cols-1 || head.x < 0 || head.y > rows-1 || head.y < 0)
+            while(c.x < cols && c.x >= 0 && c.y < rows && c.y >= 0 && !coordInsideSnake(c))
             {
                 moveSquare(c, d);
                 dist++;
@@ -276,12 +279,12 @@ public class Snake
         //For each direction, rotate 45 degrees clockwise
         for(Direction d : Direction.values())
         {
-            Coords c = new Coords((int)output[0], (int)output[1]);
-            int dist = 1;
+            Coords c = this.snake.get(0).copy();
+            int dist = 0;
             moveSquare(c, d);
             moveSquare(c, getClockwiseDir(d));
 
-            while(c.x < cols-1 && c.x > 0 && c.y < rows-1 && c.y > 0 && !coordInsideSnake(c))
+            while(c.x < cols && c.x >= 0 && c.y < rows && c.y >= 0 && !coordInsideSnake(c))
             {
                 moveSquare(c, d);
                 moveSquare(c, getClockwiseDir(d));
@@ -292,21 +295,33 @@ public class Snake
         }
 
         //Normalise values
-        for(int i = 0; i < output.length; i++)
+        for(int i = 2; i < output.length; i++)
         {
-            output[i] = output[i]/rows;
+            float ceil = 8;
+            output[i] = Math.min(ceil, output[i])/ceil;
         }
 
-        if(!first && movesSinceApple % 10 == 0)
-        {
-            bufferedStates[0] = prevState;
-            bufferedStates[1] = output;
-        }
+//        if(!first && movesSinceApple % 10 == 0)
+//        {
+//            bufferedStates[0] = prevState;
+//            bufferedStates[1] = output;
+//        }
 
         if(first)
             first = false;
 
-        prevState = output;
+        //prevState = output;
+
+        if(!debugState)
+            return output;
+        //Print output
+        System.out.println("--------------");
+        int n = 0;
+        for(float f : output)
+        {
+            n++;
+            System.out.println(n + ": " + f);
+        }
         return output;
     }
 
@@ -321,6 +336,7 @@ public class Snake
     {
         snake.clear();
         movesSinceApple = 0;
+        applesEaten = 0;
         Random r = new Random();
         int startX = cols/2;//r.nextInt(cols-1)+1;
         int startY = rows/2;//r.nextInt(rows-1)+1;

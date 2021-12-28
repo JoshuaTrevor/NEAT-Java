@@ -56,7 +56,7 @@ public class EvolutionController
         exec.scheduleAtFixedRate(ticker, 0, 1, TimeUnit.SECONDS);
         initPopulation(config, loadPrevious);
 
-
+        long startTime = System.currentTimeMillis();
         waiting = true;
         notifyEvaluators();
         try {
@@ -71,9 +71,12 @@ public class EvolutionController
         
         for(int i = 0; i < 1000000; i++)
         {
+
             currentGeneration = i + 1;
             System.out.println("(Gen " + currentGeneration + ")" +
-                    "fitness: " + mean(evaluatedSpecies.toArray()) +" Best fitness: " + evaluatedSpecies.last().fitness + " (Kept species: " + evaluatedSpecies.size() + ")");
+                    "fitness: " + Math.round(mean(evaluatedSpecies.toArray())) +" Best fitness: " +
+                    Math.round(evaluatedSpecies.last().fitness) + " (Kept species: " + evaluatedSpecies.size() + ")" +
+                    " Time taken: " + (System.currentTimeMillis() - startTime)/1000 + "s");
             recentBest = evaluatedSpecies.last().clone();
             if(currentGeneration % config.checkpointFreq == 0)
                 saveRecent();
@@ -91,6 +94,7 @@ public class EvolutionController
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            startTime = System.currentTimeMillis();
             if (!workerMonitor.finished)
                 await();
         }

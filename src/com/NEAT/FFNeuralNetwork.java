@@ -109,6 +109,7 @@ public class FFNeuralNetwork
     {
         if (inputs.length != layers[0].size())
         {
+            System.out.println(inputs.length + "!= " + layers[0].size());
             System.out.println("The given inputs do not match the size of the input layer!");
             return null;
             //This should probably be replaced with "throw MyCustomException" and some kind of better error handling

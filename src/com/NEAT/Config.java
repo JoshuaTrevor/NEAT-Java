@@ -6,14 +6,14 @@ public class Config
 {
     public int checkpointFreq = 10;
     public int[] initialDimensions = new int[] {100, 200, 25};
-    public int populationSize = 5000;
-    public int workers = 4;
+    public int populationSize = 25000;
+    public int workers = 14;
     public float preservedSpeciesRate = 0.08F;
     public final int preservedSpeciesLimit = Math.round(preservedSpeciesRate*populationSize);
 
     //Mutation options
-    public float mutateRate = 0.65F;
-    public float mutateAmount = 0.20F; //Weight will be mutated by at most +- this number
+    public float mutateRate = 0.25F;
+    public float mutateAmount = 0.2F; //Weight will be mutated by at most +- this number
     public float superMutateRate = 0.01F;
     public float superMutateAmount = 0.8F;
 
