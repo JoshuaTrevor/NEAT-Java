@@ -4,9 +4,9 @@ package com.NEAT;
 //Because each method may only need a fraction of the config, so that would be a way of decoupling
 public class Config
 {
-    public int checkpointFreq = 10;
+    public int checkpointFreq = 5;
     public int[] initialDimensions = new int[] {100, 200, 25};
-    public int populationSize = 25000;
+    public int populationSize = 2500;
     public int workers = 14;
     public float preservedSpeciesRate = 0.08F;
     public final int preservedSpeciesLimit = Math.round(preservedSpeciesRate*populationSize);

@@ -208,6 +208,12 @@ public class EvolutionController
             for(String line : brainStr.split("\n"))
                 out.println(line);
             out.close();
+
+            PrintWriter out2 = new PrintWriter("BestBrainOneLine");
+            brainStr = recentBest.brain.saveToString();
+            out2.println(brainStr.replaceAll("\n", "[NewLine]"));
+            out2.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("Brain file not found");
