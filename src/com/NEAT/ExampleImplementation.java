@@ -6,7 +6,7 @@ public class ExampleImplementation implements NeatTrainer
     @Override
     public float evaluateSpecies(FFNeuralNetwork nn)
     {
-        //This should just produce the sum of all outputs, therefore each value should be maxxed by training
+        //This should just produce the sum of all outputs, therefore each weight should quickly converge on the maximum possible value by training
         float sum = 0;
         float[] output = nn.feed(new float[] {2, 2, 2});
         for (float elem : output)
@@ -21,6 +21,4 @@ public class ExampleImplementation implements NeatTrainer
         EvolutionController ec = new EvolutionController(new Config(), this);
         ec.train(false);
     }
-
-    //Using default config setup
 }

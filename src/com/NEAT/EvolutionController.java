@@ -1,10 +1,5 @@
 package com.NEAT;
 
-//This class will basically have methods which are called by the users program and will use the methods defined in NeatTrainer
-// It should aim to set up concurrency and stuff, and deal with storing and saving different Neural networks
-// Basically, every other class should only deal with 1 NN at most, this is the only class that deals with many NN.
-
-
 import com.NEAT.Breeding.Breeder;
 import com.NEAT.Breeding.Mutator;
 import com.NEAT.Workers.*;
@@ -220,12 +215,5 @@ public class EvolutionController
         }
         System.out.println("Saved!");
 
-    }
-
-    public void exit()
-    {
-        //Try to save progress
-        //Close all processor threads
-        //Then exit program
     }
 }

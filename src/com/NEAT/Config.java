@@ -1,7 +1,5 @@
 package com.NEAT;
 
-//Should probably be a list of different enum types, maybe instead of classes it's just enums
-//Because each method may only need a fraction of the config, so that would be a way of decoupling
 public class Config
 {
     public int checkpointFreq = 5;

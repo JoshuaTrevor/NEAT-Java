@@ -8,6 +8,7 @@ import com.NEAT.NeatTrainer;
 import java.util.ArrayList;
 import java.util.Stack;
 
+// This class is where the Snake implementation is 'plugged in' to the evolutionary training library
 public class NeatImplementation implements NeatTrainer
 {
     int thingsToDo = 5;
@@ -72,52 +73,6 @@ public class NeatImplementation implements NeatTrainer
         }
 
         return (fitnessSum / fitnessCount);// + min;
-
-//        float fitnessSum = 0;
-//        int fitnessCount = 0;
-//        for(int i = 0; i < thingsToDo; i++) {
-//            Snake snake = new Snake(false);
-//            int moves = 0;
-//            while (!snake.dead) {
-//                float[] output = nn.feed(snake.getStateDistances());
-//
-//                //Convert to direction
-//                float maxVal = -1000;
-//                int maxValIndex = -1;
-//                for (int j = 0; j < output.length; j++) {
-//                    if (output[j] > maxVal) {
-//                        maxVal = output[j];
-//                        maxValIndex = j;
-//                    }
-//                }
-//                if (maxValIndex == -1) {
-//                    System.out.println("An error has occurred");
-//                    System.exit(0);
-//                }
-//                snake.move(Snake.Direction.values()[maxValIndex]);
-//
-//                if(moves<125)
-//                    moves++;
-//                if (snake.movesSinceApple > snake.rows * snake.cols)
-//                    snake.dead = true;
-//            }
-//            float collisionThing = snake.collision ? -70F : 0F;
-//            float suicidePenalty = snake.missedBetterMove ? -400F : 0;
-//
-//
-//            float fitness = suicidePenalty + snake.applesEaten * 200;// + collisionThing;// + suicidePenalty;
-////            if(snake.missedBetterMove)
-////                fitness = fitness/1.6F;
-//
-//            fitness = fitness + Math.abs(fitness) * moves/25000F;
-//            if(snake.won)
-//                fitness *= 5;
-//            if(snake.applesEaten == 0)
-//                fitness = -10000;
-//            fitnessSum += fitness;
-//            fitnessCount++;
-//        }
-//        return fitnessSum/fitnessCount;
     }
 
     public void evolve()

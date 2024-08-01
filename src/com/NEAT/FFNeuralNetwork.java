@@ -4,11 +4,10 @@ import java.util.*;
 
 public class FFNeuralNetwork
 {
-    //should have a list of layers
     //Each layer is a list of node objects
     public ArrayList<NNNode>[] layers;
     public enum ConnectionStrategy {FULLY_CONNECTED, INDIRECTLY_CONNECTED, MANUAL}
-    public Config config; //Todo - Try make this non global to avoid storing so many copies, may break mutator and some others
+    public Config config;
     public FFNeuralNetwork(ConnectionStrategy strategy, Config config)
     {
         this.config = config;
@@ -48,14 +47,9 @@ public class FFNeuralNetwork
         }
     }
 
-    //Should make concurrent at some point
-    //Remember: if the size of one of the other layers changes I won't know concurrently
-    //This initialising doesn't change the size of any of the layers, but later that might mess up ors omething idk
-
     //Connects given layer to successive layer
     public void initConnectForward(int layerID, float connectivity)
     {
-        //Using connectivity determine how many nodes to connect to
         int possibilities;
         try
         {
@@ -111,9 +105,7 @@ public class FFNeuralNetwork
         {
             System.out.println(inputs.length + "!= " + layers[0].size());
             System.out.println("The given inputs do not match the size of the input layer!");
-            return null;
-            //This should probably be replaced with "throw MyCustomException" and some kind of better error handling
-            //Maybe surround the uses of user implementations (from the NeatTrainer interface) in try catch
+			return null;
         }
 
         for(int i = 0; i < layers[0].size(); i++)
@@ -132,10 +124,8 @@ public class FFNeuralNetwork
                 {
                     int n2 = (int) o;
                     int index = -1;
-                    //TODO: Make this a binary search for efficiency later!
                     for(int j = 0; j < layers[i+1].size(); j++)
                     {
-                        //efficientify later
                         if(layers[i+1].get(j).id == n2)
                             index = j;
                     }
@@ -145,7 +135,6 @@ public class FFNeuralNetwork
             }
         }
 
-        //This part is inefficient but not significant
         //Save the output layer
         Object[] outputObjects = layers[layers.length-1].toArray();
         for (int i = 0; i < outputObjects.length; i++)
@@ -165,7 +154,6 @@ public class FFNeuralNetwork
         return output;
     }
 
-    //Todo - make this work with added nodes, currently assumes the same nodes, then just adds corresp connections
     public FFNeuralNetwork copy()
     {
         FFNeuralNetwork copy = new FFNeuralNetwork(ConnectionStrategy.MANUAL, this.config);

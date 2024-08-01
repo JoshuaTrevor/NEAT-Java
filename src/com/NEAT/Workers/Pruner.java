@@ -17,9 +17,6 @@ public class Pruner extends Thread
         this.config = config;
     }
 
-    //This gets called too much, Ideally need some way of not waking it up every time something is added
-    //But also avoiding situations where it doesn't get called and leaves a little bit on the end.
-    //Imoprtant to manage waiting otherwise process could be incorrectly considerd finished by workermonitor
     public void prune()
     {
         if(waiting) {
@@ -27,9 +24,7 @@ public class Pruner extends Thread
         }
         if(controller.evaluatedSpecies.size() > config.preservedSpeciesLimit)
         {
-            //If the population is too large, reduce the least fit species
-            //This should later be adjust to take a more sophisticated measure and remove things which don't foster diversity
-            // Eg it might be better to kill off some very similar high fitness species in order to preserve a very different upper-middle fitness species
+            //If the population is too large, prune the least fit species until it is not too large
             IdDispenser.recycleID(controller.evaluatedSpecies.first().id, config.populationSize);
             controller.evaluatedSpecies.pollFirst();
             return;

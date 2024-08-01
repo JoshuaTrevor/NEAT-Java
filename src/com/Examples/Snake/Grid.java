@@ -13,9 +13,6 @@ public class Grid extends JPanel
 
     ArrayList<Coords> snake = new ArrayList<>();
     Coords food = new Coords(5, 0);
-    //Need to separate game logic from other logic later, so essentially everything in this class should be manually updated by the SNAKE class
-    //Including snake arraylist, etc.
-    //That way this graphical stuff doesn't need to be calculated for training purposes.
 
     public Grid(int w, int h, int r, int c) {
         setSize(width = w, height = h);

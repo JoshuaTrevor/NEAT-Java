@@ -46,7 +46,7 @@ public class Snake
         int startX = cols/2;//r.nextInt(cols-1)+1;
         int startY = rows/2;//r.nextInt(rows-1)+1;
 
-        //Create a second body part which is offset to teach the snake not to eat itself
+        //Create a second body part which is randomly offset to quickly teach the snake not to eat itself
         int offset = r.nextInt(4);
         Direction dir = Direction.values()[offset];
         Coords c = new Coords(startX, startY);
@@ -265,7 +265,6 @@ public class Snake
             Coords c = this.snake.get(0).copy();
             moveSquare(c, d);
             int dist = 0;
-            //if(head.x > cols-1 || head.x < 0 || head.y > rows-1 || head.y < 0)
             while(c.x < cols && c.x >= 0 && c.y < rows && c.y >= 0 && !coordInsideSnake(c))
             {
                 moveSquare(c, d);
@@ -301,20 +300,12 @@ public class Snake
             output[i] = Math.min(ceil, output[i])/ceil;
         }
 
-//        if(!first && movesSinceApple % 10 == 0)
-//        {
-//            bufferedStates[0] = prevState;
-//            bufferedStates[1] = output;
-//        }
-
         if(first)
             first = false;
 
-        //prevState = output;
-
         if(!debugState)
             return output;
-        //Print output
+
         System.out.println("--------------");
         int n = 0;
         for(float f : output)
@@ -338,10 +329,11 @@ public class Snake
         movesSinceApple = 0;
         applesEaten = 0;
         Random r = new Random();
-        int startX = cols/2;//r.nextInt(cols-1)+1;
-        int startY = rows/2;//r.nextInt(rows-1)+1;
+        int startX = cols/2;
+        int startY = rows/2;
         this.dead=false;
         this.hasEaten = false;
+
         //Create a second body part which is offset to teach the snake not to eat itself
         int offset = r.nextInt(4);
         Direction dir = Direction.values()[offset];
