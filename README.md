@@ -5,3 +5,6 @@ It houses a library built from scratch to train generic Neural Networks using an
 
 ### DEMO
 I've created a demonstration of the project by hosting a simple static React application using an agent trained by this library in under two hours at https://snakeai-joshuatrevor.netlify.app/ . If you visit this URL you will be able to watch the agent play Snake.
+
+### NEAT-Go
+I've also created a simplified headless implementation in Go at https://github.com/JoshuaTrevor/NEAT-Go
