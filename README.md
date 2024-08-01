@@ -1,4 +1,4 @@
-### NEAT-Java
+# NEAT-Java
 This project aims to create a simple implementation of a NEAT-esque algorithm with a focus on concurrency, memory efficiency and iterative publishing for ease of observation.
 
 It houses a library built from scratch to train generic Neural Networks using an evolutionary model, along with an example implementation using the game 'Snake'
